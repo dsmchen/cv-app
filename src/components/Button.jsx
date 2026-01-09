@@ -1,7 +1,7 @@
-export default function Button() {
+export default function Button({ label }) {
   return (
     <button>
-      <span>Button component</span>
+      <span>{label}</span>
     </button>
   );
 }

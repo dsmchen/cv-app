@@ -10,7 +10,8 @@ export default function Form({ name, setName, email, setEmail, tel, setTel }) {
       <TextInput label="Name" name={name} setName={setName} />
       <EmailInput email={email} setEmail={setEmail} />
       <TelInput tel={tel} setTel={setTel} />
-      <Button />
+      <Button label="Edit" />
+      <Button label="Submit" />
     </form>
   );
 }
