@@ -22,4 +22,6 @@ form .buttons {
 
 form button {
   cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  font-weight: bold;
 }

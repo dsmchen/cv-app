@@ -1,6 +1,16 @@
-export default function Button({ label }) {
+export default function Button({ label, setInputDisabled }) {
+  function handleClick(e) {
+    e.preventDefault();
+
+    if (label === 'Submit') {
+      setInputDisabled(true);
+    } else {
+      setInputDisabled(false);
+    }
+  }
+
   return (
-    <button>
+    <button onClick={handleClick}>
       <span>{label}</span>
     </button>
   );
