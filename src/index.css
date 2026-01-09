@@ -3,7 +3,9 @@
 */
 
 :root {
+  --gray-200: #eee;
   --gray-900: #212121;
+  --white: #fff;
 }
 
 /*

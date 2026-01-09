@@ -1,3 +1,4 @@
+import '../styles/CvGenerator.css';
 import { useState } from 'react';
 import Inputter from './Inputter';
 import Outputter from './Outputter';

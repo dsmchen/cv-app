@@ -1,0 +1,17 @@
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.inputter,
+.outputter {
+  padding: 1rem;
+  border: 1px solid var(--gray-900);
+  background: var(--gray-200);
+}
+
+.inputter h2,
+.outputter h2 {
+  margin-bottom: 1rem;
+}
