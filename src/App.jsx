@@ -1,9 +1,11 @@
 import Header from './components/Header';
+import CvGenerator from './components/CvGenerator';
 
 function App() {
   return (
     <>
       <Header />
+      <CvGenerator />
     </>
   );
 }
