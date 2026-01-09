@@ -5,7 +5,7 @@ export default function EmailInput({ email, setEmail }) {
 
   return (
     <label>
-      Email
+      <span>Email</span>
       <input type="email" value={email} onChange={handleChange} />
     </label>
   );

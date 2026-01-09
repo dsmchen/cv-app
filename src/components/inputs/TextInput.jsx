@@ -5,7 +5,7 @@ export default function TextInput({ label, name, setName }) {
 
   return (
     <label>
-      {label}
+      <span>{label}</span>
       <input type="text" value={name} onChange={handleChange} />
     </label>
   );
