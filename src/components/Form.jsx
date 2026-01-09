@@ -1,5 +1,5 @@
-import TextInput from './TextInput';
-import EmailInput from './EmailInput';
+import TextInput from './inputs/TextInput';
+import EmailInput from './inputs/EmailInput';
 import Button from './Button';
 
 export default function Form({ name, setName, email, setEmail }) {
