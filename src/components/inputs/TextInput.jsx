@@ -1,11 +1,11 @@
-export default function TextInput({ name, setName }) {
+export default function TextInput({ label, name, setName }) {
   function handleChange(e) {
     setName(e.target.value);
   }
 
   return (
     <label>
-      TextInput component
+      {label}
       <input type="text" value={name} onChange={handleChange} />
     </label>
   );

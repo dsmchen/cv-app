@@ -5,7 +5,7 @@ export default function TelInput({ tel, setTel }) {
 
   return (
     <label>
-      TelInput component
+      Phone number
       <input type="tel" value={tel} onChange={handleChange} />
     </label>
   );

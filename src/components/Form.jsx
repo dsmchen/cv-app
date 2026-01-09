@@ -7,7 +7,7 @@ export default function Form({ name, setName, email, setEmail, tel, setTel }) {
   return (
     <form>
       <p>Form component</p>
-      <TextInput name={name} setName={setName} />
+      <TextInput label="Name" name={name} setName={setName} />
       <EmailInput email={email} setEmail={setEmail} />
       <TelInput tel={tel} setTel={setTel} />
       <Button />

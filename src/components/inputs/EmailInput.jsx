@@ -5,7 +5,7 @@ export default function EmailInput({ email, setEmail }) {
 
   return (
     <label>
-      EmailInput component
+      Email
       <input type="email" value={email} onChange={handleChange} />
     </label>
   );
