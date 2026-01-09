@@ -1,11 +1,13 @@
-import Input from './Input';
+import TextInput from './TextInput';
+import EmailInput from './EmailInput';
 import Button from './Button';
 
-export default function Form({ name, setName }) {
+export default function Form({ name, setName, email, setEmail }) {
   return (
     <form>
       <p>Form component</p>
-      <Input name={name} setName={setName} />
+      <TextInput name={name} setName={setName} />
+      <EmailInput email={email} setEmail={setEmail} />
       <Button />
     </form>
   );
