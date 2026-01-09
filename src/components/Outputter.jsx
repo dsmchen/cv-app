@@ -8,11 +8,11 @@ export default function Outputter({ name, email, tel }) {
         <h3>{name}</h3>
         <ul className="contact">
           <li>
-            <span>Email: </span>
+            {email && <span>Email: </span>}
             {email}
           </li>
           <li>
-            <span>Phone number: </span>
+            {tel && <span>Phone number: </span>}
             {tel}
           </li>
         </ul>
