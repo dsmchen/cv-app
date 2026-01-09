@@ -5,6 +5,7 @@ import Outputter from './Outputter';
 export default function CvGenerator() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [tel, setTel] = useState('');
 
   return (
     <main>
@@ -13,8 +14,10 @@ export default function CvGenerator() {
         setName={setName}
         email={email}
         setEmail={setEmail}
+        tel={tel}
+        setTel={setTel}
       />
-      <Outputter name={name} email={email} />
+      <Outputter name={name} email={email} tel={tel} />
     </main>
   );
 }
