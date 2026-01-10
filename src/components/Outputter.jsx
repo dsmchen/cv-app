@@ -5,17 +5,19 @@ export default function Outputter({ name, email, tel }) {
     <div className="outputter">
       <h2>Outputter</h2>
       <div className="cv">
-        <h3>{name}</h3>
-        <ul className="contact">
-          <li>
-            {email && <span>Email: </span>}
-            {email}
-          </li>
-          <li>
-            {tel && <span>Phone number: </span>}
-            {tel}
-          </li>
-        </ul>
+        <header className="cv-header">
+          <h3>{name}</h3>
+          <ul className="contact">
+            <li>
+              {email && <span>Email: </span>}
+              {email}
+            </li>
+            <li>
+              {tel && <span>Phone number: </span>}
+              {tel}
+            </li>
+          </ul>
+        </header>
       </div>
     </div>
   );

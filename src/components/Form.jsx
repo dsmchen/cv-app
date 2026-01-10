@@ -2,7 +2,7 @@ import '../styles/Form.css';
 import TextInput from './inputs/TextInput';
 import EmailInput from './inputs/EmailInput';
 import TelInput from './inputs/TelInput';
-import Button from './Button';
+import ButtonGroup from './buttons/ButtonGroup';
 import { useState } from 'react';
 
 export default function Form({ name, setName, email, setEmail, tel, setTel }) {
@@ -18,18 +18,10 @@ export default function Form({ name, setName, email, setEmail, tel, setTel }) {
       />
       <EmailInput email={email} setEmail={setEmail} disabled={inputDisabled} />
       <TelInput tel={tel} setTel={setTel} disabled={inputDisabled} />
-      <div className="buttons">
-        <Button
-          label="Edit"
-          setInputDisabled={setInputDisabled}
-          inputDisabled={inputDisabled}
-        />
-        <Button
-          label="Submit"
-          setInputDisabled={setInputDisabled}
-          inputDisabled={inputDisabled}
-        />
-      </div>
+      <ButtonGroup
+        setInputDisabled={setInputDisabled}
+        inputDisabled={inputDisabled}
+      />
     </form>
   );
 }
