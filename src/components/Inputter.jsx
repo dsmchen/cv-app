@@ -1,4 +1,4 @@
-import Form from './Form';
+import ContactForm from './ContactForm';
 
 export default function Inputter({
   name,
@@ -11,7 +11,7 @@ export default function Inputter({
   return (
     <div className="inputter">
       <h2>Inputter</h2>
-      <Form
+      <ContactForm
         name={name}
         setName={setName}
         email={email}

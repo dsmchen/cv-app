@@ -5,11 +5,19 @@ import TelInput from './inputs/TelInput';
 import ButtonGroup from './buttons/ButtonGroup';
 import { useState } from 'react';
 
-export default function Form({ name, setName, email, setEmail, tel, setTel }) {
+export default function ContactForm({
+  name,
+  setName,
+  email,
+  setEmail,
+  tel,
+  setTel,
+}) {
   const [inputDisabled, setInputDisabled] = useState(false);
 
   return (
     <form>
+      <h3>Contact</h3>
       <TextInput
         label="Name"
         name={name}
