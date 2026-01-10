@@ -20,7 +20,7 @@ export default function ContactForm({
       <h3>Contact</h3>
       <TextInput
         label="Name"
-        name={name}
+        value={name}
         setName={setName}
         disabled={inputDisabled}
       />

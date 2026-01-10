@@ -1,4 +1,4 @@
-export default function TextInput({ label, name, setName, disabled }) {
+export default function TextInput({ label, value, setName, disabled }) {
   function handleChange(e) {
     setName(e.target.value);
   }
@@ -8,7 +8,7 @@ export default function TextInput({ label, name, setName, disabled }) {
       <span>{label}</span>
       <input
         type="text"
-        value={name}
+        value={value}
         onChange={handleChange}
         disabled={disabled}
       />
