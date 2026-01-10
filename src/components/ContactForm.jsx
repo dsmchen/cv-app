@@ -26,10 +26,7 @@ export default function ContactForm({
       />
       <EmailInput email={email} setEmail={setEmail} disabled={inputDisabled} />
       <TelInput tel={tel} setTel={setTel} disabled={inputDisabled} />
-      <ButtonGroup
-        setInputDisabled={setInputDisabled}
-        inputDisabled={inputDisabled}
-      />
+      <ButtonGroup setInputDisabled={setInputDisabled} />
     </form>
   );
 }

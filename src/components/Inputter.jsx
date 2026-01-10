@@ -1,4 +1,5 @@
 import ContactForm from './ContactForm';
+import ExperienceForm from './ExperienceForm';
 
 export default function Inputter({
   name,
@@ -19,6 +20,7 @@ export default function Inputter({
         tel={tel}
         setTel={setTel}
       />
+      <ExperienceForm />
     </div>
   );
 }
