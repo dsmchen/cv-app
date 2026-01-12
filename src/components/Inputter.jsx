@@ -8,6 +8,8 @@ export default function Inputter({
   setEmail,
   tel,
   setTel,
+  experience,
+  setExperience,
 }) {
   return (
     <div className="inputter">
@@ -20,7 +22,7 @@ export default function Inputter({
         tel={tel}
         setTel={setTel}
       />
-      <ExperienceForm />
+      <ExperienceForm experience={experience} setExperience={setExperience} />
     </div>
   );
 }

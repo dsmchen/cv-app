@@ -1,6 +1,22 @@
-export default function TextInput({ label, value, setName, disabled }) {
+export default function TextInput({
+  label,
+  value,
+  setName,
+  setExperience,
+  disabled,
+}) {
   function handleChange(e) {
-    setName(e.target.value);
+    switch (label) {
+      case 'Name':
+        setName(e.target.value);
+        break;
+      case 'Company name':
+        setExperience([...value, { companyName: e.target.value }]);
+        break;
+      case 'Job title':
+        setExperience([...value, { jobTitle: e.target.value }]);
+        break;
+    }
   }
 
   return (
