@@ -2,8 +2,10 @@ export default function TextInput({
   label,
   value,
   setName,
+  experience,
   setExperience,
   disabled,
+  index,
 }) {
   function handleChange(e) {
     switch (label) {
@@ -11,13 +13,21 @@ export default function TextInput({
         setName(e.target.value);
         break;
       case 'Company name':
-        setExperience([...value, { companyName: e.target.value }]);
+        setExperience([
+          ...experience,
+          { ...experience[index], companyName: e.target.value },
+        ]);
         break;
       case 'Job title':
-        setExperience([...value, { jobTitle: e.target.value }]);
+        setExperience([
+          ...experience,
+          { ...experience[index], jobTitle: e.target.value },
+        ]);
         break;
     }
   }
+
+  console.log('TextInput value:', value);
 
   return (
     <label>

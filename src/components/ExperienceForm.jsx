@@ -1,6 +1,5 @@
 import '../styles/Form.css';
 import TextInput from './inputs/TextInput';
-import Button from './buttons/Button';
 import ButtonGroup from './buttons/ButtonGroup';
 import { useState } from 'react';
 
@@ -9,20 +8,26 @@ export default function ExperienceForm({ experience, setExperience }) {
   const [count, setCount] = useState(1);
   const experienceList = [];
 
+  console.log('experience: ', experience);
+
   for (let i = 0; i < count; i++) {
     experienceList.push(
-      <div className="experience-item">
+      <div className="experience-item" key={i}>
         <TextInput
           label="Company name"
-          value={experience[i].companyName}
+          value={experience[i] ? experience[i].companyName : ''}
           setExperience={setExperience}
           disabled={inputDisabled}
+          index={i}
+          experience={experience}
         />
         <TextInput
           label="Job title"
-          value={experience[i].jobTitle}
+          value={experience[i] ? experience[i].jobTitle : ''}
           setExperience={setExperience}
           disabled={inputDisabled}
+          index={i}
+          experience={experience}
         />
       </div>
     );
