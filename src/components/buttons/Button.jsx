@@ -21,7 +21,10 @@ export default function Button({ label, count, setCount, setInputDisabled }) {
   }
 
   return (
-    <button onClick={handleClick}>
+    <button
+      type={label === 'Submit' ? 'submit' : 'button'}
+      onClick={handleClick}
+    >
       <span>{label}</span>
     </button>
   );
