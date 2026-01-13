@@ -1,6 +1,19 @@
 import '../styles/Outputter.css';
 
-export default function Outputter({ contact }) {
+export default function Outputter({ contact, experience }) {
+  const experienceJsx = [];
+
+  for (const exp of experience) {
+    experienceJsx.push(
+      <ul key={exp.id} className="exp">
+        {exp.companyName && (
+          <li key={exp.id + '-companyName'}>{exp.companyName}</li>
+        )}
+        {exp.jobTitle && <li key={exp.id + '-jobTitle'}>{exp.jobTitle}</li>}
+      </ul>
+    );
+  }
+
   return (
     <div className="outputter">
       <h2>Outputter</h2>
@@ -18,6 +31,10 @@ export default function Outputter({ contact }) {
             </li>
           </ul>
         </header>
+        {(experience[0].companyName || experience[0].jobTitle) && (
+          <h4>Experience</h4>
+        )}
+        {experienceJsx}
       </div>
     </div>
   );

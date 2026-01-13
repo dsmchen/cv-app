@@ -21,7 +21,7 @@ export default function CvGenerator() {
         experience={experience}
         setExperience={setExperience}
       />
-      <Outputter contact={contact} />
+      <Outputter contact={contact} experience={experience} />
     </main>
   );
 }
