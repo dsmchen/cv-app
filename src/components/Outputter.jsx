@@ -6,9 +6,18 @@ export default function Outputter({ contact, experience }) {
   for (const exp of experience) {
     experienceJsx.push(
       <ul key={exp.id} className="exp">
-        {exp.jobTitle && <li key={exp.id + '-jobTitle'}>{exp.jobTitle}</li>}
+        {exp.jobTitle && (
+          <li
+            key={exp.id + '-jobTitle'}
+            className={exp.companyName ? 'has-comma job-title' : 'job-title'}
+          >
+            {exp.jobTitle}
+          </li>
+        )}
         {exp.companyName && (
-          <li key={exp.id + '-companyName'}>{exp.companyName}</li>
+          <li key={exp.id + '-companyName'} className="company-name">
+            {exp.companyName}
+          </li>
         )}
       </ul>
     );
@@ -31,10 +40,12 @@ export default function Outputter({ contact, experience }) {
             </li>
           </ul>
         </header>
-        {(experience[0].jobTitle || experience[0].companyName) && (
-          <h4>Experience</h4>
-        )}
-        {experienceJsx}
+        <section className="experience">
+          {(experience[0].jobTitle || experience[0].companyName) && (
+            <h4>Experience</h4>
+          )}
+          {experienceJsx}
+        </section>
       </div>
     </div>
   );
