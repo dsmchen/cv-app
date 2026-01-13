@@ -15,8 +15,28 @@ export default function Outputter({ contact, experience }) {
           </li>
         )}
         {exp.companyName && (
-          <li key={exp.id + '-companyName'} className="company-name">
+          <li
+            key={exp.id + '-companyName'}
+            className={
+              exp.startDate || exp.endDate
+                ? 'has-dash company-name'
+                : 'company-name'
+            }
+          >
             {exp.companyName}
+          </li>
+        )}
+        {exp.startDate && (
+          <li
+            key={exp.id + '-startDate'}
+            className={exp.endDate ? 'has-hyphen start-date' : 'start-date'}
+          >
+            {exp.startDate}
+          </li>
+        )}
+        {exp.endDate && (
+          <li key={exp.id + '-endDate'} className="end-date">
+            {exp.endDate}
           </li>
         )}
       </ul>
@@ -41,9 +61,10 @@ export default function Outputter({ contact, experience }) {
           </ul>
         </header>
         <section className="experience">
-          {(experience[0].jobTitle || experience[0].companyName) && (
-            <h4>Experience</h4>
-          )}
+          {(experience[0].jobTitle ||
+            experience[0].companyName ||
+            experience[0].startDate ||
+            experience[0].endDate) && <h4>Experience</h4>}
           {experienceJsx}
         </section>
       </div>

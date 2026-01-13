@@ -10,7 +10,13 @@ export default function CvGenerator() {
     tel: '',
   });
   const [experience, setExperience] = useState([
-    { id: 0, jobTitle: '', companyName: '' },
+    {
+      id: 0,
+      jobTitle: '',
+      companyName: '',
+      startDate: '',
+      endDate: '',
+    },
   ]);
 
   return (

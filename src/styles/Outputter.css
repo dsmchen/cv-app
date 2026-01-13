@@ -36,14 +36,23 @@
   list-style: none;
   padding-left: 0;
   display: flex;
-  gap: 0.25rem;
 }
 
 .outputter .exp .job-title,
-.outputter .exp .company-name {
+.outputter .exp .company-name,
+.outputter .exp .start-date,
+.outputter .exp .end-date {
   font-weight: bold;
 }
 
 .outputter .exp .has-comma::after {
-  content: ',';
+  content: ',\00a0';
+}
+
+.outputter .exp .has-dash::after {
+  content: '\00a0—\00a0';
+}
+
+.outputter .exp .has-hyphen::after {
+  content: '\00a0-\00a0';
 }

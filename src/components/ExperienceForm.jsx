@@ -1,5 +1,6 @@
 import '../styles/Form.css';
 import TextInput from './inputs/TextInput';
+import DateInput from './inputs/DateInput';
 import ButtonGroup from './buttons/ButtonGroup';
 import { useState } from 'react';
 
@@ -22,6 +23,22 @@ export default function ExperienceForm({ experience, setExperience }) {
         <TextInput
           label="Company name"
           value={experience[i] ? experience[i].companyName : ''}
+          experience={experience}
+          setExperience={setExperience}
+          index={i}
+          disabled={inputDisabled}
+        />
+        <DateInput
+          label="Start date"
+          value={experience[i] ? experience[i].startDate : ''}
+          experience={experience}
+          setExperience={setExperience}
+          index={i}
+          disabled={inputDisabled}
+        />
+        <DateInput
+          label="End date"
+          value={experience[i] ? experience[i].endDate : ''}
           experience={experience}
           setExperience={setExperience}
           index={i}
