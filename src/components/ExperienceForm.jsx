@@ -14,18 +14,18 @@ export default function ExperienceForm({ experience, setExperience }) {
         <TextInput
           label="Company name"
           value={experience[i] ? experience[i].companyName : ''}
-          setExperience={setExperience}
-          disabled={inputDisabled}
-          index={i}
           experience={experience}
+          setExperience={setExperience}
+          index={i}
+          disabled={inputDisabled}
         />
         <TextInput
           label="Job title"
           value={experience[i] ? experience[i].jobTitle : ''}
-          setExperience={setExperience}
-          disabled={inputDisabled}
-          index={i}
           experience={experience}
+          setExperience={setExperience}
+          index={i}
+          disabled={inputDisabled}
         />
       </div>
     );

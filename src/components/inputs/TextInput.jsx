@@ -5,8 +5,8 @@ export default function TextInput({
   setContact,
   experience,
   setExperience,
-  disabled,
   index,
+  disabled,
 }) {
   function handleChange(e) {
     switch (label) {
@@ -17,16 +17,26 @@ export default function TextInput({
         });
         break;
       case 'Company name':
-        setExperience([
-          ...experience,
-          { ...experience[index], companyName: e.target.value },
-        ]);
+        setExperience(
+          experience.map((exp) => {
+            if (exp.id === index) {
+              return { ...exp, companyName: e.target.value };
+            } else {
+              return exp;
+            }
+          })
+        );
         break;
       case 'Job title':
-        setExperience([
-          ...experience,
-          { ...experience[index], jobTitle: e.target.value },
-        ]);
+        setExperience(
+          experience.map((exp) => {
+            if (exp.id === index) {
+              return { ...exp, jobTitle: e.target.value };
+            } else {
+              return exp;
+            }
+          })
+        );
         break;
     }
   }
