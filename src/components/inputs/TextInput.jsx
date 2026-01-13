@@ -16,22 +16,22 @@ export default function TextInput({
           name: e.target.value,
         });
         break;
-      case 'Company name':
+      case 'Job title':
         setExperience(
           experience.map((exp) => {
             if (exp.id === index) {
-              return { ...exp, companyName: e.target.value };
+              return { ...exp, jobTitle: e.target.value };
             } else {
               return exp;
             }
           })
         );
         break;
-      case 'Job title':
+      case 'Company name':
         setExperience(
           experience.map((exp) => {
             if (exp.id === index) {
-              return { ...exp, jobTitle: e.target.value };
+              return { ...exp, companyName: e.target.value };
             } else {
               return exp;
             }

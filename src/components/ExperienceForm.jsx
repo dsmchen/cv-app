@@ -12,16 +12,16 @@ export default function ExperienceForm({ experience, setExperience }) {
     experienceList.push(
       <div className="experience-item" key={i}>
         <TextInput
-          label="Company name"
-          value={experience[i] ? experience[i].companyName : ''}
+          label="Job title"
+          value={experience[i] ? experience[i].jobTitle : ''}
           experience={experience}
           setExperience={setExperience}
           index={i}
           disabled={inputDisabled}
         />
         <TextInput
-          label="Job title"
-          value={experience[i] ? experience[i].jobTitle : ''}
+          label="Company name"
+          value={experience[i] ? experience[i].companyName : ''}
           experience={experience}
           setExperience={setExperience}
           index={i}
