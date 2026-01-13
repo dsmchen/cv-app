@@ -9,7 +9,9 @@ export default function CvGenerator() {
     email: '',
     tel: '',
   });
-  const [experience, setExperience] = useState([]);
+  const [experience, setExperience] = useState([
+    { id: 0, companyName: '', jobTitle: '' },
+  ]);
 
   return (
     <main>

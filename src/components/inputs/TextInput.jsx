@@ -31,8 +31,6 @@ export default function TextInput({
     }
   }
 
-  console.log('TextInput value:', value);
-
   return (
     <label>
       <span>{label}</span>

@@ -5,10 +5,8 @@ import { useState } from 'react';
 
 export default function ExperienceForm({ experience, setExperience }) {
   const [inputDisabled, setInputDisabled] = useState(false);
-  const [count, setCount] = useState(1);
+  const count = experience.length;
   const experienceList = [];
-
-  console.log('experience: ', experience);
 
   for (let i = 0; i < count; i++) {
     experienceList.push(
@@ -39,8 +37,8 @@ export default function ExperienceForm({ experience, setExperience }) {
       {experienceList}
       <ButtonGroup
         formType="list"
-        count={count}
-        setCount={setCount}
+        experience={experience}
+        setExperience={setExperience}
         setInputDisabled={setInputDisabled}
       />
     </form>

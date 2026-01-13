@@ -1,4 +1,9 @@
-export default function Button({ label, count, setCount, setInputDisabled }) {
+export default function Button({
+  label,
+  experience,
+  setExperience,
+  setInputDisabled,
+}) {
   function handleClick(e) {
     e.preventDefault();
 
@@ -10,11 +15,16 @@ export default function Button({ label, count, setCount, setInputDisabled }) {
         setInputDisabled(false);
         break;
       case 'Add':
-        setCount(count + 1);
+        setExperience([
+          ...experience,
+          { id: experience.length, companyName: '', jobTitle: '' },
+        ]);
         break;
       case 'Remove':
-        if (count > 1) {
-          setCount(count - 1);
+        if (experience.length > 1) {
+          setExperience(
+            experience.filter((e) => e.id !== experience.length - 1)
+          );
         }
         break;
     }
