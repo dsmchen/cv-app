@@ -1,6 +1,9 @@
-export default function TelInput({ tel, setTel, disabled }) {
+export default function TelInput({ value, contact, setContact, disabled }) {
   function handleChange(e) {
-    setTel(e.target.value);
+    setContact({
+      ...contact,
+      tel: e.target.value,
+    });
   }
 
   return (
@@ -8,7 +11,7 @@ export default function TelInput({ tel, setTel, disabled }) {
       <span>Phone number</span>
       <input
         type="tel"
-        value={tel}
+        value={value}
         onChange={handleChange}
         disabled={disabled}
       />

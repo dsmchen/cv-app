@@ -1,7 +1,8 @@
 export default function TextInput({
   label,
   value,
-  setName,
+  contact,
+  setContact,
   experience,
   setExperience,
   disabled,
@@ -10,7 +11,10 @@ export default function TextInput({
   function handleChange(e) {
     switch (label) {
       case 'Name':
-        setName(e.target.value);
+        setContact({
+          ...contact,
+          name: e.target.value,
+        });
         break;
       case 'Company name':
         setExperience([

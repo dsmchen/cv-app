@@ -5,14 +5,7 @@ import TelInput from './inputs/TelInput';
 import ButtonGroup from './buttons/ButtonGroup';
 import { useState } from 'react';
 
-export default function ContactForm({
-  name,
-  setName,
-  email,
-  setEmail,
-  tel,
-  setTel,
-}) {
+export default function ContactForm({ contact, setContact }) {
   const [inputDisabled, setInputDisabled] = useState(false);
 
   return (
@@ -20,12 +13,23 @@ export default function ContactForm({
       <h3>Contact</h3>
       <TextInput
         label="Name"
-        value={name}
-        setName={setName}
+        value={contact.name}
+        contact={contact}
+        setContact={setContact}
         disabled={inputDisabled}
       />
-      <EmailInput email={email} setEmail={setEmail} disabled={inputDisabled} />
-      <TelInput tel={tel} setTel={setTel} disabled={inputDisabled} />
+      <EmailInput
+        value={contact.email}
+        contact={contact}
+        setContact={setContact}
+        disabled={inputDisabled}
+      />
+      <TelInput
+        value={contact.tel}
+        contact={contact}
+        setContact={setContact}
+        disabled={inputDisabled}
+      />
       <ButtonGroup setInputDisabled={setInputDisabled} />
     </form>
   );

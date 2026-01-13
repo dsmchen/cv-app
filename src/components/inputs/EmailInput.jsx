@@ -1,6 +1,9 @@
-export default function EmailInput({ email, setEmail, disabled }) {
+export default function EmailInput({ value, contact, setContact, disabled }) {
   function handleChange(e) {
-    setEmail(e.target.value);
+    setContact({
+      ...contact,
+      email: e.target.value,
+    });
   }
 
   return (
@@ -8,7 +11,7 @@ export default function EmailInput({ email, setEmail, disabled }) {
       <span>Email</span>
       <input
         type="email"
-        value={email}
+        value={value}
         onChange={handleChange}
         disabled={disabled}
       />

@@ -1,20 +1,20 @@
 import '../styles/Outputter.css';
 
-export default function Outputter({ name, email, tel }) {
+export default function Outputter({ contact }) {
   return (
     <div className="outputter">
       <h2>Outputter</h2>
       <div className="cv">
         <header className="cv-header">
-          <h3>{name}</h3>
+          <h3>{contact.name}</h3>
           <ul className="contact">
             <li>
-              {email && <span>Email: </span>}
-              {email}
+              {contact.email && <span>Email: </span>}
+              {contact.email}
             </li>
             <li>
-              {tel && <span>Phone number: </span>}
-              {tel}
+              {contact.tel && <span>Phone number: </span>}
+              {contact.tel}
             </li>
           </ul>
         </header>
