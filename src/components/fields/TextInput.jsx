@@ -20,17 +20,7 @@ export default function TextInput({
           ...contact,
           name: e.target.value,
         });
-
-        if (e.target.validity.valid) {
-          setNameError(false);
-        } else {
-          if (e.target.validity.valueMissing) {
-            setNameError(true);
-          }
-        }
-
         break;
-
       case 'Job title':
         setExperience(
           experience.map((exp) => {
@@ -42,7 +32,6 @@ export default function TextInput({
           })
         );
         break;
-
       case 'Company name':
         setExperience(
           experience.map((exp) => {
@@ -54,7 +43,6 @@ export default function TextInput({
           })
         );
         break;
-
       case 'Institution name':
         setEducation(
           education.map((edu) => {
@@ -66,7 +54,6 @@ export default function TextInput({
           })
         );
         break;
-
       case 'Title of study':
         setEducation(
           education.map((edu) => {
@@ -81,6 +68,16 @@ export default function TextInput({
     }
   }
 
+  function handleBlur(e) {
+    if (label === 'Name (required)') {
+      if (e.target.validity.valid) {
+        setNameError(false);
+      } else if (e.target.validity.valueMissing) {
+        setNameError(true);
+      }
+    }
+  }
+
   return (
     <label>
       <span>{label}</span>
@@ -88,6 +85,7 @@ export default function TextInput({
         type="text"
         value={value}
         onChange={handleChange}
+        onBlur={handleBlur}
         disabled={disabled}
         required={required}
       />
