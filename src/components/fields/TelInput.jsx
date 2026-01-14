@@ -8,12 +8,13 @@ export default function TelInput({ value, contact, setContact, disabled }) {
 
   return (
     <label>
-      <span>Phone number</span>
+      <span>Phone number (required)</span>
       <input
         type="tel"
         value={value}
         onChange={handleChange}
         disabled={disabled}
+        required
       />
     </label>
   );
