@@ -5,6 +5,8 @@ export default function TextInput({
   setContact,
   experience,
   setExperience,
+  education,
+  setEducation,
   index,
   disabled,
 }) {
@@ -34,6 +36,28 @@ export default function TextInput({
               return { ...exp, companyName: e.target.value };
             } else {
               return exp;
+            }
+          })
+        );
+        break;
+      case 'Institution name':
+        setEducation(
+          education.map((edu) => {
+            if (edu.id === index) {
+              return { ...edu, institutionName: e.target.value };
+            } else {
+              return edu;
+            }
+          })
+        );
+        break;
+      case 'Title of study':
+        setEducation(
+          education.map((edu) => {
+            if (edu.id === index) {
+              return { ...edu, titleOfStudy: e.target.value };
+            } else {
+              return edu;
             }
           })
         );

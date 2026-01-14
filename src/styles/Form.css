@@ -2,6 +2,11 @@ form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+form h3 {
+  margin-top: 1rem;
 }
 
 form label {
@@ -24,13 +29,15 @@ form button {
   cursor: pointer;
   padding: 0.25rem 0.5rem;
   font-weight: bold;
+  line-height: 1.2;
 }
 
 /*
-  ExperienceForm
+  ExperienceForm and EducationForm
 */
 
-.experience-item {
+.experience-item,
+.education-item {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -38,7 +45,8 @@ form button {
   padding: 1rem;
 }
 
-.experience-item label.present {
+.experience-item label.present,
+.education-item label.present {
   flex-direction: row;
   align-items: center;
   gap: 0.5rem;

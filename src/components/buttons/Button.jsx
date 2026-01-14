@@ -2,6 +2,8 @@ export default function Button({
   label,
   experience,
   setExperience,
+  education,
+  setEducation,
   setInputDisabled,
 }) {
   function handleClick(e) {
@@ -14,7 +16,7 @@ export default function Button({
       case 'Edit':
         setInputDisabled(false);
         break;
-      case 'Add':
+      case 'Add experience':
         setExperience([
           ...experience,
           {
@@ -28,11 +30,29 @@ export default function Button({
           },
         ]);
         break;
-      case 'Remove':
+      case 'Remove experience':
         if (experience.length > 1) {
           setExperience(
             experience.filter((e) => e.id !== experience.length - 1)
           );
+        }
+        break;
+      case 'Add education':
+        setEducation([
+          ...education,
+          {
+            id: education.length,
+            institutionName: '',
+            titleOfStudy: '',
+            startDate: '',
+            endDate: '',
+            present: false,
+          },
+        ]);
+        break;
+      case 'Remove education':
+        if (education.length > 1) {
+          setEducation(education.filter((e) => e.id !== education.length - 1));
         }
         break;
     }

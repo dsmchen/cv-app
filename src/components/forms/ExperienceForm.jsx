@@ -31,7 +31,7 @@ export default function ExperienceForm({ experience, setExperience }) {
           disabled={inputDisabled}
         />
         <DateInput
-          label="Start date"
+          label="Experience start date"
           value={experience[i].startDate ?? ''}
           experience={experience}
           setExperience={setExperience}
@@ -40,7 +40,7 @@ export default function ExperienceForm({ experience, setExperience }) {
         />
         {!experience[i].present && (
           <DateInput
-            label="End date"
+            label="Experience end date"
             value={experience[i].endDate ?? ''}
             experience={experience}
             setExperience={setExperience}
@@ -49,7 +49,7 @@ export default function ExperienceForm({ experience, setExperience }) {
           />
         )}
         <CheckboxInput
-          label="Present"
+          label="Present experience"
           checked={experience[i].present ?? false}
           experience={experience}
           setExperience={setExperience}
@@ -73,7 +73,7 @@ export default function ExperienceForm({ experience, setExperience }) {
       <h3>Experience</h3>
       {experienceList}
       <ButtonGroup
-        formType="list"
+        formType="experience"
         experience={experience}
         setExperience={setExperience}
         setInputDisabled={setInputDisabled}

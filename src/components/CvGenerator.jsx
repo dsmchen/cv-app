@@ -20,6 +20,16 @@ export default function CvGenerator() {
       mainResponsibilities: '',
     },
   ]);
+  const [education, setEducation] = useState([
+    {
+      id: 0,
+      institutionName: '',
+      titleOfStudy: '',
+      startDate: '',
+      endDate: '',
+      present: false,
+    },
+  ]);
 
   return (
     <main>
@@ -28,8 +38,14 @@ export default function CvGenerator() {
         setContact={setContact}
         experience={experience}
         setExperience={setExperience}
+        education={education}
+        setEducation={setEducation}
       />
-      <Outputter contact={contact} experience={experience} />
+      <Outputter
+        contact={contact}
+        experience={experience}
+        education={education}
+      />
     </main>
   );
 }
