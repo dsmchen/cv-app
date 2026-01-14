@@ -14,7 +14,7 @@ export default function ExperienceForm({ experience, setExperience }) {
       <div className="experience-item" key={i}>
         <TextInput
           label="Job title"
-          value={experience[i] ? experience[i].jobTitle : ''}
+          value={experience[i].jobTitle ?? ''}
           experience={experience}
           setExperience={setExperience}
           index={i}
@@ -22,7 +22,7 @@ export default function ExperienceForm({ experience, setExperience }) {
         />
         <TextInput
           label="Company name"
-          value={experience[i] ? experience[i].companyName : ''}
+          value={experience[i].companyName ?? ''}
           experience={experience}
           setExperience={setExperience}
           index={i}
@@ -30,7 +30,7 @@ export default function ExperienceForm({ experience, setExperience }) {
         />
         <DateInput
           label="Start date"
-          value={experience[i] ? experience[i].startDate : ''}
+          value={experience[i].startDate ?? ''}
           experience={experience}
           setExperience={setExperience}
           index={i}
@@ -38,7 +38,7 @@ export default function ExperienceForm({ experience, setExperience }) {
         />
         <DateInput
           label="End date"
-          value={experience[i] ? experience[i].endDate : ''}
+          value={experience[i].endDate ?? ''}
           experience={experience}
           setExperience={setExperience}
           index={i}

@@ -7,9 +7,6 @@ export default function DateInput({
   disabled,
 }) {
   function handleChange(e) {
-    // TO BE REMOVED
-    console.log(e.target.value);
-
     switch (label) {
       case 'Start date':
         setExperience(
