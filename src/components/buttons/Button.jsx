@@ -17,7 +17,13 @@ export default function Button({
       case 'Add':
         setExperience([
           ...experience,
-          { id: experience.length, companyName: '', jobTitle: '' },
+          {
+            id: experience.length,
+            companyName: '',
+            jobTitle: '',
+            startDate: '',
+            endDate: '',
+          },
         ]);
         break;
       case 'Remove':
