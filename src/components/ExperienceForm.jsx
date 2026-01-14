@@ -1,6 +1,6 @@
 import '../styles/Form.css';
-import TextInput from './inputs/TextInput';
-import DateInput from './inputs/DateInput';
+import TextInput from './fields/TextInput';
+import DateInput from './fields/DateInput';
 import ButtonGroup from './buttons/ButtonGroup';
 import { useState } from 'react';
 

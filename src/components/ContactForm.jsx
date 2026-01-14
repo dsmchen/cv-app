@@ -1,7 +1,7 @@
 import '../styles/Form.css';
-import TextInput from './inputs/TextInput';
-import EmailInput from './inputs/EmailInput';
-import TelInput from './inputs/TelInput';
+import TextInput from './fields/TextInput';
+import EmailInput from './fields/EmailInput';
+import TelInput from './fields/TelInput';
 import ButtonGroup from './buttons/ButtonGroup';
 import { useState } from 'react';
 
