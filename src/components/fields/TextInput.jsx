@@ -22,10 +22,10 @@ export default function TextInput({
         });
 
         if (e.target.validity.valid) {
-          setNameError('');
+          setNameError(false);
         } else {
           if (e.target.validity.valueMissing) {
-            setNameError('Name is required.');
+            setNameError(true);
           }
         }
 
@@ -91,7 +91,7 @@ export default function TextInput({
         disabled={disabled}
         required={required}
       />
-      {nameError && <span className="error">{nameError}</span>}
+      {nameError && <span className="error">Name is required.</span>}
     </label>
   );
 }
