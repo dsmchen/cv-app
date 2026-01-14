@@ -1,5 +1,5 @@
-import ContactForm from './ContactForm';
-import ExperienceForm from './ExperienceForm';
+import ContactForm from './forms/ContactForm';
+import ExperienceForm from './forms/ExperienceForm';
 
 export default function Inputter({
   contact,

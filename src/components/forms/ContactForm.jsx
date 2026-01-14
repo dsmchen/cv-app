@@ -1,8 +1,8 @@
-import '../styles/Form.css';
-import TextInput from './fields/TextInput';
-import EmailInput from './fields/EmailInput';
-import TelInput from './fields/TelInput';
-import ButtonGroup from './buttons/ButtonGroup';
+import '../../styles/Form.css';
+import TextInput from '../fields/TextInput';
+import EmailInput from '../fields/EmailInput';
+import TelInput from '../fields/TelInput';
+import ButtonGroup from '../buttons/ButtonGroup';
 import { useState } from 'react';
 
 export default function ContactForm({ contact, setContact }) {

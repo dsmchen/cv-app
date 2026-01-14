@@ -1,9 +1,9 @@
-import '../styles/Form.css';
-import TextInput from './fields/TextInput';
-import DateInput from './fields/DateInput';
-import CheckboxInput from './fields/CheckboxInput';
-import Textarea from './fields/Textarea';
-import ButtonGroup from './buttons/ButtonGroup';
+import '../../styles/Form.css';
+import TextInput from '../fields/TextInput';
+import DateInput from '../fields/DateInput';
+import CheckboxInput from '../fields/CheckboxInput';
+import Textarea from '../fields/Textarea';
+import ButtonGroup from '../buttons/ButtonGroup';
 import { useState } from 'react';
 
 export default function ExperienceForm({ experience, setExperience }) {
