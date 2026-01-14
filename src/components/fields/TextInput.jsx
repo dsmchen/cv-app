@@ -9,6 +9,9 @@ export default function TextInput({
   setEducation,
   index,
   disabled,
+  required,
+  nameError,
+  setNameError,
 }) {
   function handleChange(e) {
     switch (label) {
@@ -17,7 +20,17 @@ export default function TextInput({
           ...contact,
           name: e.target.value,
         });
+
+        if (e.target.validity.valid) {
+          setNameError('');
+        } else {
+          if (e.target.validity.valueMissing) {
+            setNameError(label + ' is required.');
+          }
+        }
+
         break;
+
       case 'Job title':
         setExperience(
           experience.map((exp) => {
@@ -29,6 +42,7 @@ export default function TextInput({
           })
         );
         break;
+
       case 'Company name':
         setExperience(
           experience.map((exp) => {
@@ -40,6 +54,7 @@ export default function TextInput({
           })
         );
         break;
+
       case 'Institution name':
         setEducation(
           education.map((edu) => {
@@ -51,6 +66,7 @@ export default function TextInput({
           })
         );
         break;
+
       case 'Title of study':
         setEducation(
           education.map((edu) => {
@@ -73,7 +89,9 @@ export default function TextInput({
         value={value}
         onChange={handleChange}
         disabled={disabled}
+        required={required}
       />
+      {nameError && <span className="error">{nameError}</span>}
     </label>
   );
 }

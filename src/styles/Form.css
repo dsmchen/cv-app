@@ -19,6 +19,15 @@ form label span {
   font-weight: bold;
 }
 
+form input:user-invalid {
+  border-color: var(--red-600);
+}
+
+form .error {
+  font-weight: normal;
+  color: var(--red-600);
+}
+
 form .button-group {
   display: flex;
   gap: 1rem;

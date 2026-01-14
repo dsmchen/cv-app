@@ -5,6 +5,7 @@ export default function Button({
   education,
   setEducation,
   setInputDisabled,
+  formError,
 }) {
   function handleClick(e) {
     e.preventDefault();
@@ -62,6 +63,7 @@ export default function Button({
     <button
       type={label === 'Submit' ? 'submit' : 'button'}
       onClick={handleClick}
+      disabled={formError}
     >
       <span>{label}</span>
     </button>

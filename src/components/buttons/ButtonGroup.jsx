@@ -7,6 +7,7 @@ export default function ButtonGroup({
   education,
   setEducation,
   setInputDisabled,
+  formError,
 }) {
   return (
     <div className="button-group">
@@ -39,7 +40,11 @@ export default function ButtonGroup({
         </>
       )}
       <Button label="Edit" setInputDisabled={setInputDisabled} />
-      <Button label="Submit" setInputDisabled={setInputDisabled} />
+      <Button
+        label="Submit"
+        setInputDisabled={setInputDisabled}
+        formError={formError}
+      />
     </div>
   );
 }
