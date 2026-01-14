@@ -38,6 +38,12 @@ form button {
   padding: 1rem;
 }
 
+.experience-item label.present {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 textarea {
   resize: none;
 }

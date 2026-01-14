@@ -23,7 +23,7 @@ export default function CheckboxInput({
   }
 
   return (
-    <label>
+    <label className={label.toLowerCase()}>
       <span>{label}</span>
       <input
         type="checkbox"
