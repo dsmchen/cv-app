@@ -6,8 +6,8 @@ export default function Outputter({ contact, experience }) {
 
   for (const exp of experience) {
     experienceJsx.push(
-      <div className="exp">
-        <ul key={exp.id} className="exp-top">
+      <div className="exp" key={exp.id}>
+        <ul className="exp-top">
           {exp.jobTitle && (
             <li
               key={exp.id + '-jobTitle'}
