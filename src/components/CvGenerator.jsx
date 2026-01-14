@@ -16,6 +16,7 @@ export default function CvGenerator() {
       companyName: '',
       startDate: '',
       endDate: '',
+      present: false,
       mainResponsibilities: '',
     },
   ]);

@@ -1,6 +1,7 @@
 import '../styles/Form.css';
 import TextInput from './fields/TextInput';
 import DateInput from './fields/DateInput';
+import CheckboxInput from './fields/CheckboxInput';
 import Textarea from './fields/Textarea';
 import ButtonGroup from './buttons/ButtonGroup';
 import { useState } from 'react';
@@ -37,9 +38,19 @@ export default function ExperienceForm({ experience, setExperience }) {
           index={i}
           disabled={inputDisabled}
         />
-        <DateInput
-          label="End date"
-          value={experience[i].endDate ?? ''}
+        {!experience[i].present && (
+          <DateInput
+            label="End date"
+            value={experience[i].endDate ?? ''}
+            experience={experience}
+            setExperience={setExperience}
+            index={i}
+            disabled={inputDisabled}
+          />
+        )}
+        <CheckboxInput
+          label="Present"
+          checked={experience[i].present ?? false}
           experience={experience}
           setExperience={setExperience}
           index={i}

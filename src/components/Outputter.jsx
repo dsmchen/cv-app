@@ -38,7 +38,7 @@ export default function Outputter({ contact, experience }) {
           )}
           {exp.endDate && (
             <li key={exp.id + '-endDate'} className="end-date">
-              {exp.endDate}
+              {exp.present ? 'Present' : exp.endDate}
             </li>
           )}
         </ul>
