@@ -14,6 +14,10 @@
   margin-top: 3rem;
 }
 
+/*
+  ContactForm
+*/
+
 .outputter .contact {
   list-style: none;
   padding-left: 0;
@@ -26,22 +30,20 @@
   font-weight: bold;
 }
 
+/*
+  ExperienceForm
+*/
+
 .outputter .experience {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-.outputter .exp {
+.outputter .exp .exp-top {
   list-style: none;
   padding-left: 0;
   display: flex;
-}
-
-.outputter .exp .job-title,
-.outputter .exp .company-name,
-.outputter .exp .start-date,
-.outputter .exp .end-date {
   font-weight: bold;
 }
 
@@ -55,4 +57,8 @@
 
 .outputter .exp .has-hyphen::after {
   content: '\00a0-\00a0';
+}
+
+.outputter .exp .exp-bottom {
+  padding-left: 20px;
 }

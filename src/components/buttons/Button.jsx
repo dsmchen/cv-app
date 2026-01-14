@@ -23,6 +23,7 @@ export default function Button({
             jobTitle: '',
             startDate: '',
             endDate: '',
+            mainResponsibilities: '',
           },
         ]);
         break;

@@ -1,6 +1,7 @@
 import '../styles/Form.css';
 import TextInput from './fields/TextInput';
 import DateInput from './fields/DateInput';
+import Textarea from './fields/Textarea';
 import ButtonGroup from './buttons/ButtonGroup';
 import { useState } from 'react';
 
@@ -39,6 +40,14 @@ export default function ExperienceForm({ experience, setExperience }) {
         <DateInput
           label="End date"
           value={experience[i].endDate ?? ''}
+          experience={experience}
+          setExperience={setExperience}
+          index={i}
+          disabled={inputDisabled}
+        />
+        <Textarea
+          label="Main responsibilities"
+          value={experience[i].mainResponsibilities ?? ''}
           experience={experience}
           setExperience={setExperience}
           index={i}

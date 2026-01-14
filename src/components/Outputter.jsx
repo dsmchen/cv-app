@@ -2,44 +2,56 @@ import '../styles/Outputter.css';
 
 export default function Outputter({ contact, experience }) {
   const experienceJsx = [];
+  const mainResponsibilitiesJsx = [];
 
   for (const exp of experience) {
     experienceJsx.push(
-      <ul key={exp.id} className="exp">
-        {exp.jobTitle && (
-          <li
-            key={exp.id + '-jobTitle'}
-            className={exp.companyName ? 'has-comma job-title' : 'job-title'}
-          >
-            {exp.jobTitle}
-          </li>
+      <div className="exp">
+        <ul key={exp.id} className="exp-top">
+          {exp.jobTitle && (
+            <li
+              key={exp.id + '-jobTitle'}
+              className={exp.companyName ? 'has-comma job-title' : 'job-title'}
+            >
+              {exp.jobTitle}
+            </li>
+          )}
+          {exp.companyName && (
+            <li
+              key={exp.id + '-companyName'}
+              className={
+                exp.startDate || exp.endDate
+                  ? 'has-dash company-name'
+                  : 'company-name'
+              }
+            >
+              {exp.companyName}
+            </li>
+          )}
+          {exp.startDate && (
+            <li
+              key={exp.id + '-startDate'}
+              className={exp.endDate ? 'has-hyphen start-date' : 'start-date'}
+            >
+              {exp.startDate}
+            </li>
+          )}
+          {exp.endDate && (
+            <li key={exp.id + '-endDate'} className="end-date">
+              {exp.endDate}
+            </li>
+          )}
+        </ul>
+        {exp.mainResponsibilities && (
+          <ul className="exp-bottom">
+            {exp.mainResponsibilities.split(', ').forEach((element) => {
+              console.log(element);
+              mainResponsibilitiesJsx.push(<li key={element}>{element}</li>);
+            })}
+            {mainResponsibilitiesJsx}
+          </ul>
         )}
-        {exp.companyName && (
-          <li
-            key={exp.id + '-companyName'}
-            className={
-              exp.startDate || exp.endDate
-                ? 'has-dash company-name'
-                : 'company-name'
-            }
-          >
-            {exp.companyName}
-          </li>
-        )}
-        {exp.startDate && (
-          <li
-            key={exp.id + '-startDate'}
-            className={exp.endDate ? 'has-hyphen start-date' : 'start-date'}
-          >
-            {exp.startDate}
-          </li>
-        )}
-        {exp.endDate && (
-          <li key={exp.id + '-endDate'} className="end-date">
-            {exp.endDate}
-          </li>
-        )}
-      </ul>
+      </div>
     );
   }
 
@@ -61,10 +73,9 @@ export default function Outputter({ contact, experience }) {
           </ul>
         </header>
         <section className="experience">
-          {(experience[0].jobTitle ||
-            experience[0].companyName ||
-            experience[0].startDate ||
-            experience[0].endDate) && <h4>Experience</h4>}
+          {(experience[0].jobTitle || experience[0].companyName) && (
+            <h4>Experience</h4>
+          )}
           {experienceJsx}
         </section>
       </div>
