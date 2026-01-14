@@ -2,10 +2,11 @@ import '../styles/Outputter.css';
 
 export default function Outputter({ contact, experience, education }) {
   const experienceJsx = [];
-  const mainResponsibilitiesJsx = [];
   const educationJsx = [];
 
   for (const exp of experience) {
+    const mainResponsibilitiesJsx = [];
+
     experienceJsx.push(
       <div className="exp" key={exp.id}>
         <ul className="exp-top">
