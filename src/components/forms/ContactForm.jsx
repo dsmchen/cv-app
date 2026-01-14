@@ -8,7 +8,7 @@ import { useState } from 'react';
 export default function ContactForm({ contact, setContact }) {
   const [inputDisabled, setInputDisabled] = useState(false);
   const [nameError, setNameError] = useState(false);
-  const formError = nameError;
+  const [emailError, setEmailError] = useState(false);
 
   return (
     <form>
@@ -28,6 +28,8 @@ export default function ContactForm({ contact, setContact }) {
         contact={contact}
         setContact={setContact}
         disabled={inputDisabled}
+        emailError={emailError}
+        setEmailError={setEmailError}
       />
       <TelInput
         value={contact.tel}
@@ -35,7 +37,7 @@ export default function ContactForm({ contact, setContact }) {
         setContact={setContact}
         disabled={inputDisabled}
       />
-      <ButtonGroup setInputDisabled={setInputDisabled} formError={formError} />
+      <ButtonGroup setInputDisabled={setInputDisabled} />
     </form>
   );
 }
