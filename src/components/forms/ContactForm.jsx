@@ -14,7 +14,7 @@ export default function ContactForm({ contact, setContact }) {
     <form>
       <h3>Contact</h3>
       <TextInput
-        label="Name"
+        label="Name (required)"
         value={contact.name}
         contact={contact}
         setContact={setContact}

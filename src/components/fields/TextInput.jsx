@@ -15,7 +15,7 @@ export default function TextInput({
 }) {
   function handleChange(e) {
     switch (label) {
-      case 'Name':
+      case 'Name (required)':
         setContact({
           ...contact,
           name: e.target.value,
@@ -25,7 +25,7 @@ export default function TextInput({
           setNameError('');
         } else {
           if (e.target.validity.valueMissing) {
-            setNameError(label + ' is required.');
+            setNameError('Name is required.');
           }
         }
 
