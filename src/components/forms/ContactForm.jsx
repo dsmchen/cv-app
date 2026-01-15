@@ -1,7 +1,5 @@
-import Icon from '@mdi/react';
-import { mdiChevronUp } from '@mdi/js';
-import { mdiChevronDown } from '@mdi/js';
 import '../../styles/Form.css';
+import AccordionButton from '../buttons/AccordionButton';
 import TextInput from '../fields/TextInput';
 import EmailInput from '../fields/EmailInput';
 import TelInput from '../fields/TelInput';
@@ -15,15 +13,10 @@ export default function ContactForm({ contact, setContact }) {
   const [telError, setTelError] = useState(false);
   const [open, setOpen] = useState(true);
 
-  function handleClick() {
-    setOpen(!open);
-  }
-
   return (
-    <form>
-      <h3 onClick={handleClick}>
-        <span>Contact</span>
-        <Icon path={open ? mdiChevronUp : mdiChevronDown} size={1} />
+    <form noValidate>
+      <h3>
+        <AccordionButton label="Contact" open={open} setOpen={setOpen} />
       </h3>
       <div className={open ? 'fields' : 'closed fields'}>
         <TextInput

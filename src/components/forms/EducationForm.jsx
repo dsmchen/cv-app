@@ -1,7 +1,5 @@
-import Icon from '@mdi/react';
-import { mdiChevronUp } from '@mdi/js';
-import { mdiChevronDown } from '@mdi/js';
 import '../../styles/Form.css';
+import AccordionButton from '../buttons/AccordionButton';
 import TextInput from '../fields/TextInput';
 import DateInput from '../fields/DateInput';
 import CheckboxInput from '../fields/CheckboxInput';
@@ -63,15 +61,10 @@ export default function EducationForm({ education, setEducation }) {
     );
   }
 
-  function handleClick() {
-    setOpen(!open);
-  }
-
   return (
-    <form>
-      <h3 onClick={handleClick}>
-        <span>Education</span>
-        <Icon path={open ? mdiChevronUp : mdiChevronDown} size={1} />
+    <form noValidate>
+      <h3>
+        <AccordionButton label="Contact" open={open} setOpen={setOpen} />
       </h3>
       <div className={open ? 'fields' : 'closed fields'}>
         {educationList}

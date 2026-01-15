@@ -1,7 +1,5 @@
-import Icon from '@mdi/react';
-import { mdiChevronUp } from '@mdi/js';
-import { mdiChevronDown } from '@mdi/js';
 import '../../styles/Form.css';
+import AccordionButton from '../buttons/AccordionButton';
 import TextInput from '../fields/TextInput';
 import DateInput from '../fields/DateInput';
 import CheckboxInput from '../fields/CheckboxInput';
@@ -72,16 +70,11 @@ export default function ExperienceForm({ experience, setExperience }) {
     );
   }
 
-  function handleClick() {
-    setOpen(!open);
-  }
-
   return (
-    <form>
-      <h3 onClick={handleClick}>
-        <span>Experience</span>
-        <Icon path={open ? mdiChevronUp : mdiChevronDown} size={1} />
-      </h3>{' '}
+    <form noValidate>
+      <h3>
+        <AccordionButton label="Experience" open={open} setOpen={setOpen} />
+      </h3>
       <div className={open ? 'fields' : 'closed fields'}>
         {experienceList}
         <FormButtonGroup
