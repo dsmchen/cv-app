@@ -1,5 +1,6 @@
 import '../../styles/Form.css';
 import AccordionButton from '../accordion/AccordionButton';
+import AccordionPanel from '../accordion/AccordionPanel';
 import TextInput from '../fields/TextInput';
 import EmailInput from '../fields/EmailInput';
 import TelInput from '../fields/TelInput';
@@ -19,12 +20,7 @@ export default function ContactForm({ contact, setContact }) {
       <h3>
         <AccordionButton label={label} open={open} setOpen={setOpen} />
       </h3>
-      <div
-        className={open ? 'fields' : 'closed fields'}
-        id={'sect-' + label}
-        role="region"
-        aria-labelledby={'accordion-' + label}
-      >
+      <AccordionPanel open={open} label={label}>
         <TextInput
           label="Name (required)"
           value={contact.name}
@@ -52,7 +48,7 @@ export default function ContactForm({ contact, setContact }) {
           setTelError={setTelError}
         />
         <FormButtonGroup setInputDisabled={setInputDisabled} />
-      </div>
+      </AccordionPanel>
     </form>
   );
 }

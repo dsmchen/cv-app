@@ -1,5 +1,6 @@
 import '../../styles/Form.css';
 import AccordionButton from '../accordion/AccordionButton';
+import AccordionPanel from '../accordion/AccordionPanel';
 import TextInput from '../fields/TextInput';
 import DateInput from '../fields/DateInput';
 import CheckboxInput from '../fields/CheckboxInput';
@@ -76,12 +77,7 @@ export default function ExperienceForm({ experience, setExperience }) {
       <h3>
         <AccordionButton label={label} open={open} setOpen={setOpen} />
       </h3>
-      <div
-        className={open ? 'fields' : 'closed fields'}
-        id={'sect-' + label}
-        role="region"
-        aria-labelledby={'accordion-' + label}
-      >
+      <AccordionPanel open={open} label={label}>
         {experienceList}
         <FormButtonGroup
           formType={label}
@@ -89,7 +85,7 @@ export default function ExperienceForm({ experience, setExperience }) {
           setExperience={setExperience}
           setInputDisabled={setInputDisabled}
         />
-      </div>
+      </AccordionPanel>
     </form>
   );
 }

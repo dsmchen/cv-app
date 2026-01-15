@@ -1,5 +1,6 @@
 import '../../styles/Form.css';
 import AccordionButton from '../accordion/AccordionButton';
+import AccordionPanel from '../accordion/AccordionPanel';
 import TextInput from '../fields/TextInput';
 import DateInput from '../fields/DateInput';
 import CheckboxInput from '../fields/CheckboxInput';
@@ -67,12 +68,7 @@ export default function EducationForm({ education, setEducation }) {
       <h3>
         <AccordionButton label={label} open={open} setOpen={setOpen} />
       </h3>
-      <div
-        className={open ? 'fields' : 'closed fields'}
-        id={'sect-' + label}
-        role="region"
-        aria-labelledby={'accordion-' + label}
-      >
+      <AccordionPanel open={open} label={label}>
         {educationList}
         <FormButtonGroup
           formType={label}
@@ -80,7 +76,7 @@ export default function EducationForm({ education, setEducation }) {
           setEducation={setEducation}
           setInputDisabled={setInputDisabled}
         />
-      </div>
+      </AccordionPanel>
     </form>
   );
 }
