@@ -1,3 +1,6 @@
+import Icon from '@mdi/react';
+import { mdiChevronUp } from '@mdi/js';
+import { mdiChevronDown } from '@mdi/js';
 import '../../styles/Form.css';
 import TextInput from '../fields/TextInput';
 import DateInput from '../fields/DateInput';
@@ -9,6 +12,7 @@ export default function EducationForm({ education, setEducation }) {
   const [inputDisabled, setInputDisabled] = useState(false);
   const count = education.length;
   const educationList = [];
+  const [open, setOpen] = useState(false);
 
   for (let i = 0; i < count; i++) {
     educationList.push(
@@ -59,16 +63,25 @@ export default function EducationForm({ education, setEducation }) {
     );
   }
 
+  function handleClick() {
+    setOpen(!open);
+  }
+
   return (
     <form>
-      <h3>Education</h3>
-      {educationList}
-      <ButtonGroup
-        formType="education"
-        education={education}
-        setEducation={setEducation}
-        setInputDisabled={setInputDisabled}
-      />
+      <h3 onClick={handleClick}>
+        <span>Education</span>
+        <Icon path={open ? mdiChevronUp : mdiChevronDown} size={1} />
+      </h3>
+      <div className={open ? 'fields' : 'closed fields'}>
+        {educationList}
+        <ButtonGroup
+          formType="education"
+          education={education}
+          setEducation={setEducation}
+          setInputDisabled={setInputDisabled}
+        />
+      </div>
     </form>
   );
 }

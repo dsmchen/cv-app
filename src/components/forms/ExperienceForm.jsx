@@ -1,3 +1,6 @@
+import Icon from '@mdi/react';
+import { mdiChevronUp } from '@mdi/js';
+import { mdiChevronDown } from '@mdi/js';
 import '../../styles/Form.css';
 import TextInput from '../fields/TextInput';
 import DateInput from '../fields/DateInput';
@@ -10,6 +13,7 @@ export default function ExperienceForm({ experience, setExperience }) {
   const [inputDisabled, setInputDisabled] = useState(false);
   const count = experience.length;
   const experienceList = [];
+  const [open, setOpen] = useState(false);
 
   for (let i = 0; i < count; i++) {
     experienceList.push(
@@ -68,16 +72,25 @@ export default function ExperienceForm({ experience, setExperience }) {
     );
   }
 
+  function handleClick() {
+    setOpen(!open);
+  }
+
   return (
     <form>
-      <h3>Experience</h3>
-      {experienceList}
-      <ButtonGroup
-        formType="experience"
-        experience={experience}
-        setExperience={setExperience}
-        setInputDisabled={setInputDisabled}
-      />
+      <h3 onClick={handleClick}>
+        <span>Experience</span>
+        <Icon path={open ? mdiChevronUp : mdiChevronDown} size={1} />
+      </h3>{' '}
+      <div className={open ? 'fields' : 'closed fields'}>
+        {experienceList}
+        <ButtonGroup
+          formType="experience"
+          experience={experience}
+          setExperience={setExperience}
+          setInputDisabled={setInputDisabled}
+        />
+      </div>
     </form>
   );
 }
