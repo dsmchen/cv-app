@@ -1,9 +1,24 @@
-export default function TelInput({ value, contact, setContact, disabled }) {
+export default function TelInput({
+  value,
+  contact,
+  setContact,
+  disabled,
+  telError,
+  setTelError,
+}) {
   function handleChange(e) {
     setContact({
       ...contact,
       tel: e.target.value,
     });
+  }
+
+  function handleBlur(e) {
+    if (e.target.validity.valid) {
+      setTelError(false);
+    } else if (e.target.validity.valueMissing) {
+      setTelError(true);
+    }
   }
 
   return (
@@ -13,9 +28,11 @@ export default function TelInput({ value, contact, setContact, disabled }) {
         type="tel"
         value={value}
         onChange={handleChange}
+        onBlur={handleBlur}
         disabled={disabled}
         required
       />
+      {telError && <span className="error">Phone number is required.</span>}
     </label>
   );
 }

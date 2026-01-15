@@ -9,6 +9,7 @@ export default function ContactForm({ contact, setContact }) {
   const [inputDisabled, setInputDisabled] = useState(false);
   const [nameError, setNameError] = useState(false);
   const [emailError, setEmailError] = useState(false);
+  const [telError, setTelError] = useState(false);
 
   return (
     <form>
@@ -36,6 +37,8 @@ export default function ContactForm({ contact, setContact }) {
         contact={contact}
         setContact={setContact}
         disabled={inputDisabled}
+        telError={telError}
+        setTelError={setTelError}
       />
       <ButtonGroup setInputDisabled={setInputDisabled} />
     </form>
