@@ -12,13 +12,19 @@ export default function ContactForm({ contact, setContact }) {
   const [emailError, setEmailError] = useState(false);
   const [telError, setTelError] = useState(false);
   const [open, setOpen] = useState(true);
+  const label = 'contact';
 
   return (
     <form noValidate>
       <h3>
-        <AccordionButton label="Contact" open={open} setOpen={setOpen} />
+        <AccordionButton label={label} open={open} setOpen={setOpen} />
       </h3>
-      <div className={open ? 'fields' : 'closed fields'}>
+      <div
+        className={open ? 'fields' : 'closed fields'}
+        id={'sect-' + label}
+        role="region"
+        aria-labelledby={'accordion-' + label}
+      >
         <TextInput
           label="Name (required)"
           value={contact.name}

@@ -12,6 +12,7 @@ export default function ExperienceForm({ experience, setExperience }) {
   const count = experience.length;
   const experienceList = [];
   const [open, setOpen] = useState(false);
+  const label = 'experience';
 
   for (let i = 0; i < count; i++) {
     experienceList.push(
@@ -73,12 +74,17 @@ export default function ExperienceForm({ experience, setExperience }) {
   return (
     <form noValidate>
       <h3>
-        <AccordionButton label="Experience" open={open} setOpen={setOpen} />
+        <AccordionButton label={label} open={open} setOpen={setOpen} />
       </h3>
-      <div className={open ? 'fields' : 'closed fields'}>
+      <div
+        className={open ? 'fields' : 'closed fields'}
+        id={'sect-' + label}
+        role="region"
+        aria-labelledby={'accordion-' + label}
+      >
         {experienceList}
         <FormButtonGroup
-          formType="experience"
+          formType={label}
           experience={experience}
           setExperience={setExperience}
           setInputDisabled={setInputDisabled}

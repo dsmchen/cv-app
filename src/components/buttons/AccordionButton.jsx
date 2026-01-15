@@ -8,7 +8,13 @@ export default function AccordionButton({ label, open, setOpen }) {
   }
 
   return (
-    <button type="button" onClick={handleClick}>
+    <button
+      type="button"
+      onClick={handleClick}
+      aria-expanded={open}
+      aria-controls={'sect-' + label}
+      id={'accordion-' + label}
+    >
       <span>{label}</span>
       <Icon path={open ? mdiChevronUp : mdiChevronDown} size={1} />
     </button>

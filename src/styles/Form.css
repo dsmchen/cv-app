@@ -17,6 +17,7 @@ form h3 button {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  text-transform: capitalize;
 }
 
 form .fields {

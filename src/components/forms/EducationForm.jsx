@@ -11,6 +11,7 @@ export default function EducationForm({ education, setEducation }) {
   const count = education.length;
   const educationList = [];
   const [open, setOpen] = useState(false);
+  const label = 'education';
 
   for (let i = 0; i < count; i++) {
     educationList.push(
@@ -64,12 +65,17 @@ export default function EducationForm({ education, setEducation }) {
   return (
     <form noValidate>
       <h3>
-        <AccordionButton label="Contact" open={open} setOpen={setOpen} />
+        <AccordionButton label={label} open={open} setOpen={setOpen} />
       </h3>
-      <div className={open ? 'fields' : 'closed fields'}>
+      <div
+        className={open ? 'fields' : 'closed fields'}
+        id={'sect-' + label}
+        role="region"
+        aria-labelledby={'accordion-' + label}
+      >
         {educationList}
         <FormButtonGroup
-          formType="education"
+          formType={label}
           education={education}
           setEducation={setEducation}
           setInputDisabled={setInputDisabled}
