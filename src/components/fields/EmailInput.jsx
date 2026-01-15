@@ -42,13 +42,13 @@ export default function EmailInput({
         disabled={disabled}
         required
         className={emailError && 'invalid'}
+        aria-describedby="email-error"
       />
-      {emailError && emailErrorType === 'valueMissing' && (
-        <span className="error">Email is required.</span>
-      )}
-      {emailError && emailErrorType === 'typeMismatch' && (
-        <span className="error">
-          Please enter a valid email e.g. doris@example.com.
+      {emailError && (
+        <span id="email-error" role="alert" className="error">
+          {emailErrorType === 'valueMissing'
+            ? 'Email is required.'
+            : 'Please enter a valid email e.g. doris@example.com.'}
         </span>
       )}
     </label>

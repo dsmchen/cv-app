@@ -89,8 +89,13 @@ export default function TextInput({
         disabled={disabled}
         required={required}
         className={nameError && 'invalid'}
+        aria-describedby="name-error"
       />
-      {nameError && <span className="error">Name is required.</span>}
+      {nameError && (
+        <span id="name-error" role="alert" className="error">
+          Name is required.
+        </span>
+      )}
     </label>
   );
 }

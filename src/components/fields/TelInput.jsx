@@ -32,8 +32,13 @@ export default function TelInput({
         disabled={disabled}
         required
         className={telError && 'invalid'}
+        aria-describedby="tel-error"
       />
-      {telError && <span className="error">Phone number is required.</span>}
+      {telError && (
+        <span id="tel-error" role="alert" className="error">
+          Phone number is required.
+        </span>
+      )}
     </label>
   );
 }
