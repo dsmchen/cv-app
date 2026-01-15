@@ -1,0 +1,22 @@
+.accordion-button {
+  border: 0;
+  border-bottom: 1px solid var(--gray-900);
+  padding: 0;
+  background: none;
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: capitalize;
+}
+
+.accordion-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.accordion-panel.closed {
+  display: none;
+}
