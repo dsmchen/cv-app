@@ -26,8 +26,9 @@
   justify-content: center;
 }
 
-.outputter .contact span {
-  font-weight: bold;
+.outputter .contact li {
+  display: flex;
+  gap: 0.5rem;
 }
 
 /*

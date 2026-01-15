@@ -1,3 +1,6 @@
+import Icon from '@mdi/react';
+import { mdiEmail } from '@mdi/js';
+import { mdiPhone } from '@mdi/js';
 import '../styles/Outputter.css';
 
 export default function Outputter({ contact, experience, education }) {
@@ -94,14 +97,18 @@ export default function Outputter({ contact, experience, education }) {
         <header className="cv-header">
           <h3>{contact.name}</h3>
           <ul className="contact">
-            <li>
-              {contact.email && <span>Email: </span>}
-              {contact.email}
-            </li>
-            <li>
-              {contact.tel && <span>Phone number: </span>}
-              {contact.tel}
-            </li>
+            {contact.email && (
+              <li>
+                <Icon path={mdiEmail} size={1} aria-label="Email" />
+                {contact.email}
+              </li>
+            )}
+            {contact.tel && (
+              <li>
+                <Icon path={mdiPhone} size={1} aria-label="Phone" />
+                {contact.tel}
+              </li>
+            )}
           </ul>
         </header>
         <section className="experience">
