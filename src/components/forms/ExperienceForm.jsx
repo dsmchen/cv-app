@@ -4,7 +4,7 @@ import TextInput from '../fields/TextInput';
 import DateInput from '../fields/DateInput';
 import CheckboxInput from '../fields/CheckboxInput';
 import Textarea from '../fields/Textarea';
-import FormButtonGroup from '../accordion/FormButtonGroup';
+import FormButtonGroup from './FormButtonGroup';
 import { useState } from 'react';
 
 export default function ExperienceForm({ experience, setExperience }) {

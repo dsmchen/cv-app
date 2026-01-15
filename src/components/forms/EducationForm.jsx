@@ -3,7 +3,7 @@ import AccordionButton from '../accordion/AccordionButton';
 import TextInput from '../fields/TextInput';
 import DateInput from '../fields/DateInput';
 import CheckboxInput from '../fields/CheckboxInput';
-import FormButtonGroup from '../accordion/FormButtonGroup';
+import FormButtonGroup from './FormButtonGroup';
 import { useState } from 'react';
 
 export default function EducationForm({ education, setEducation }) {

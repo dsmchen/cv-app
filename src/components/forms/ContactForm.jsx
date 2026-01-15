@@ -3,7 +3,7 @@ import AccordionButton from '../accordion/AccordionButton';
 import TextInput from '../fields/TextInput';
 import EmailInput from '../fields/EmailInput';
 import TelInput from '../fields/TelInput';
-import FormButtonGroup from '../accordion/FormButtonGroup';
+import FormButtonGroup from './FormButtonGroup';
 import { useState } from 'react';
 
 export default function ContactForm({ contact, setContact }) {
