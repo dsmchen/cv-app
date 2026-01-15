@@ -31,6 +31,7 @@ export default function TelInput({
         onBlur={handleBlur}
         disabled={disabled}
         required
+        className={telError && 'invalid'}
       />
       {telError && <span className="error">Phone number is required.</span>}
     </label>

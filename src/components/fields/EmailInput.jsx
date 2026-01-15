@@ -41,6 +41,7 @@ export default function EmailInput({
         onBlur={handleBlur}
         disabled={disabled}
         required
+        className={emailError && 'invalid'}
       />
       {emailError && emailErrorType === 'valueMissing' && (
         <span className="error">Email is required.</span>

@@ -88,6 +88,7 @@ export default function TextInput({
         onBlur={handleBlur}
         disabled={disabled}
         required={required}
+        className={nameError && 'invalid'}
       />
       {nameError && <span className="error">Name is required.</span>}
     </label>

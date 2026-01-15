@@ -19,7 +19,7 @@ form label span {
   font-weight: bold;
 }
 
-form input:user-invalid {
+form input.invalid {
   border-color: var(--red-600);
 }
 
