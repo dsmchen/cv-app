@@ -1,9 +1,9 @@
 import '../../styles/Form.css';
-import AccordionButton from '../buttons/AccordionButton';
+import AccordionButton from '../accordion/AccordionButton';
 import TextInput from '../fields/TextInput';
 import DateInput from '../fields/DateInput';
 import CheckboxInput from '../fields/CheckboxInput';
-import FormButtonGroup from '../buttons/FormButtonGroup';
+import FormButtonGroup from '../accordion/FormButtonGroup';
 import { useState } from 'react';
 
 export default function EducationForm({ education, setEducation }) {

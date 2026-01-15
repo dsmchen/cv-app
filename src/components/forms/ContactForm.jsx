@@ -1,9 +1,9 @@
 import '../../styles/Form.css';
-import AccordionButton from '../buttons/AccordionButton';
+import AccordionButton from '../accordion/AccordionButton';
 import TextInput from '../fields/TextInput';
 import EmailInput from '../fields/EmailInput';
 import TelInput from '../fields/TelInput';
-import FormButtonGroup from '../buttons/FormButtonGroup';
+import FormButtonGroup from '../accordion/FormButtonGroup';
 import { useState } from 'react';
 
 export default function ContactForm({ contact, setContact }) {
