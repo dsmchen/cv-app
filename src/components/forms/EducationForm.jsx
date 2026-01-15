@@ -5,7 +5,7 @@ import '../../styles/Form.css';
 import TextInput from '../fields/TextInput';
 import DateInput from '../fields/DateInput';
 import CheckboxInput from '../fields/CheckboxInput';
-import ButtonGroup from '../buttons/ButtonGroup';
+import FormButtonGroup from '../buttons/FormButtonGroup';
 import { useState } from 'react';
 
 export default function EducationForm({ education, setEducation }) {
@@ -75,7 +75,7 @@ export default function EducationForm({ education, setEducation }) {
       </h3>
       <div className={open ? 'fields' : 'closed fields'}>
         {educationList}
-        <ButtonGroup
+        <FormButtonGroup
           formType="education"
           education={education}
           setEducation={setEducation}

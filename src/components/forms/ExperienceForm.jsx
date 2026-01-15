@@ -6,7 +6,7 @@ import TextInput from '../fields/TextInput';
 import DateInput from '../fields/DateInput';
 import CheckboxInput from '../fields/CheckboxInput';
 import Textarea from '../fields/Textarea';
-import ButtonGroup from '../buttons/ButtonGroup';
+import FormButtonGroup from '../buttons/FormButtonGroup';
 import { useState } from 'react';
 
 export default function ExperienceForm({ experience, setExperience }) {
@@ -84,7 +84,7 @@ export default function ExperienceForm({ experience, setExperience }) {
       </h3>{' '}
       <div className={open ? 'fields' : 'closed fields'}>
         {experienceList}
-        <ButtonGroup
+        <FormButtonGroup
           formType="experience"
           experience={experience}
           setExperience={setExperience}

@@ -5,7 +5,7 @@ import '../../styles/Form.css';
 import TextInput from '../fields/TextInput';
 import EmailInput from '../fields/EmailInput';
 import TelInput from '../fields/TelInput';
-import ButtonGroup from '../buttons/ButtonGroup';
+import FormButtonGroup from '../buttons/FormButtonGroup';
 import { useState } from 'react';
 
 export default function ContactForm({ contact, setContact }) {
@@ -52,7 +52,7 @@ export default function ContactForm({ contact, setContact }) {
           telError={telError}
           setTelError={setTelError}
         />
-        <ButtonGroup setInputDisabled={setInputDisabled} />
+        <FormButtonGroup setInputDisabled={setInputDisabled} />
       </div>
     </form>
   );

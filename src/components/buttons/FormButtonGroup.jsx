@@ -1,6 +1,6 @@
-import Button from './Button';
+import FormButton from './FormButton';
 
-export default function ButtonGroup({
+export default function FormButtonGroup({
   formType,
   experience,
   setExperience,
@@ -12,12 +12,12 @@ export default function ButtonGroup({
     <div className="button-group">
       {formType === 'experience' && (
         <>
-          <Button
+          <FormButton
             label="Add experience"
             experience={experience}
             setExperience={setExperience}
           />
-          <Button
+          <FormButton
             label="Remove experience"
             experience={experience}
             setExperience={setExperience}
@@ -26,20 +26,20 @@ export default function ButtonGroup({
       )}
       {formType === 'education' && (
         <>
-          <Button
+          <FormButton
             label="Add education"
             education={education}
             setEducation={setEducation}
           />
-          <Button
+          <FormButton
             label="Remove education"
             education={education}
             setEducation={setEducation}
           />
         </>
       )}
-      <Button label="Edit" setInputDisabled={setInputDisabled} />
-      <Button label="Submit" setInputDisabled={setInputDisabled} />
+      <FormButton label="Edit" setInputDisabled={setInputDisabled} />
+      <FormButton label="Submit" setInputDisabled={setInputDisabled} />
     </div>
   );
 }

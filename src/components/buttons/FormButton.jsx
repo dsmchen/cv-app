@@ -1,4 +1,4 @@
-export default function Button({
+export default function FormButton({
   label,
   experience,
   setExperience,
