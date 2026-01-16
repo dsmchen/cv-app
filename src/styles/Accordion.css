@@ -21,11 +21,12 @@
 }
 
 .accordion-panel {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  height: auto;
+  transition: height 500ms;
 }
 
 .accordion-panel.closed {
-  display: none;
+  height: 0px;
+  transition: height 500ms;
+  overflow: hidden;
 }

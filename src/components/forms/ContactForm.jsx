@@ -22,43 +22,45 @@ export default function ContactForm({ contact, setContact }) {
         <AccordionButton label={label} open={open} setOpen={setOpen} />
       </h3>
       <AccordionPanel open={open} label={label}>
-        <TextInput
-          label="Name (required)"
-          value={contact.name}
-          contact={contact}
-          setContact={setContact}
-          disabled={inputDisabled}
-          required={true}
-          nameError={nameError}
-          setNameError={setNameError}
-        />
-        <EmailInput
-          value={contact.email}
-          contact={contact}
-          setContact={setContact}
-          disabled={inputDisabled}
-          emailError={emailError}
-          setEmailError={setEmailError}
-          emailErrorType={emailErrorType}
-          setEmailErrorType={setEmailErrorType}
-        />
-        <TelInput
-          value={contact.tel}
-          contact={contact}
-          setContact={setContact}
-          disabled={inputDisabled}
-          telError={telError}
-          setTelError={setTelError}
-        />
-        <FormButtonGroup
-          formType={label}
-          inputDisabled={inputDisabled}
-          setInputDisabled={setInputDisabled}
-          setNameError={setNameError}
-          setEmailError={setEmailError}
-          setEmailErrorType={setEmailErrorType}
-          setTelError={setTelError}
-        />
+        <div className="fields">
+          <TextInput
+            label="Name (required)"
+            value={contact.name}
+            contact={contact}
+            setContact={setContact}
+            disabled={inputDisabled}
+            required={true}
+            nameError={nameError}
+            setNameError={setNameError}
+          />
+          <EmailInput
+            value={contact.email}
+            contact={contact}
+            setContact={setContact}
+            disabled={inputDisabled}
+            emailError={emailError}
+            setEmailError={setEmailError}
+            emailErrorType={emailErrorType}
+            setEmailErrorType={setEmailErrorType}
+          />
+          <TelInput
+            value={contact.tel}
+            contact={contact}
+            setContact={setContact}
+            disabled={inputDisabled}
+            telError={telError}
+            setTelError={setTelError}
+          />
+          <FormButtonGroup
+            formType={label}
+            inputDisabled={inputDisabled}
+            setInputDisabled={setInputDisabled}
+            setNameError={setNameError}
+            setEmailError={setEmailError}
+            setEmailErrorType={setEmailErrorType}
+            setTelError={setTelError}
+          />
+        </div>
       </AccordionPanel>
     </form>
   );

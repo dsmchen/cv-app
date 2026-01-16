@@ -78,14 +78,16 @@ export default function ExperienceForm({ experience, setExperience }) {
         <AccordionButton label={label} open={open} setOpen={setOpen} />
       </h3>
       <AccordionPanel open={open} label={label}>
-        {experienceList}
-        <FormButtonGroup
-          formType={label}
-          experience={experience}
-          setExperience={setExperience}
-          inputDisabled={inputDisabled}
-          setInputDisabled={setInputDisabled}
-        />
+        <div className="fields">
+          {experienceList}
+          <FormButtonGroup
+            formType={label}
+            experience={experience}
+            setExperience={setExperience}
+            inputDisabled={inputDisabled}
+            setInputDisabled={setInputDisabled}
+          />
+        </div>
       </AccordionPanel>
     </form>
   );

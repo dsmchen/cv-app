@@ -69,14 +69,16 @@ export default function EducationForm({ education, setEducation }) {
         <AccordionButton label={label} open={open} setOpen={setOpen} />
       </h3>
       <AccordionPanel open={open} label={label}>
-        {educationList}
-        <FormButtonGroup
-          formType={label}
-          education={education}
-          setEducation={setEducation}
-          inputDisabled={inputDisabled}
-          setInputDisabled={setInputDisabled}
-        />
+        <div className="fields">
+          {educationList}
+          <FormButtonGroup
+            formType={label}
+            education={education}
+            setEducation={setEducation}
+            inputDisabled={inputDisabled}
+            setInputDisabled={setInputDisabled}
+          />
+        </div>
       </AccordionPanel>
     </form>
   );
