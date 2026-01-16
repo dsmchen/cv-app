@@ -14,6 +14,4 @@
 
 ## Out of scope
 
-- Animation
 - Responsive design
-
