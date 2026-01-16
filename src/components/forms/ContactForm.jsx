@@ -27,7 +27,7 @@ export default function ContactForm({ contact, setContact }) {
           contact={contact}
           setContact={setContact}
           disabled={inputDisabled}
-          required="true"
+          required={true}
           nameError={nameError}
           setNameError={setNameError}
         />
