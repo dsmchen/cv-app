@@ -11,6 +11,15 @@
   text-transform: capitalize;
 }
 
+.accordion-button svg {
+  transition: rotate 1s;
+}
+
+.accordion-button.open svg {
+  rotate: 1turn;
+  transition: rotate 1s;
+}
+
 .accordion-panel {
   display: flex;
   flex-direction: column;
