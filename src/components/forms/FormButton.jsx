@@ -1,4 +1,5 @@
 export default function FormButton({
+  formType,
   label,
   experience,
   setExperience,
@@ -6,13 +7,43 @@ export default function FormButton({
   setEducation,
   inputDisabled,
   setInputDisabled,
+  setNameError,
+  setEmailError,
+  setEmailErrorType,
+  setTelError,
 }) {
   function handleClick(e) {
     e.preventDefault();
 
     switch (label) {
       case 'Submit':
-        setInputDisabled(true);
+        if (formType === 'contact') {
+          const form = e.target.closest('form');
+          const name = document.getElementById('name');
+          const email = document.getElementById('email');
+          const tel = document.getElementById('tel');
+
+          if (form.checkValidity()) {
+            setInputDisabled(true);
+          } else {
+            if (name.validity.valueMissing) {
+              setNameError(true);
+            }
+            if (tel.validity.valueMissing) {
+              setTelError(true);
+            }
+            if (email.validity.valueMissing) {
+              setEmailError(true);
+              setEmailErrorType('valueMissing');
+            } else if (email.validity.typeMismatch) {
+              setEmailError(true);
+              setEmailErrorType('typeMismatch');
+            }
+          }
+        } else {
+          setInputDisabled(true);
+        }
+
         break;
       case 'Edit':
         setInputDisabled(false);

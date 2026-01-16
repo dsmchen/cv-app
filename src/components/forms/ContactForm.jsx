@@ -11,6 +11,7 @@ export default function ContactForm({ contact, setContact }) {
   const [inputDisabled, setInputDisabled] = useState(false);
   const [nameError, setNameError] = useState(false);
   const [emailError, setEmailError] = useState(false);
+  const [emailErrorType, setEmailErrorType] = useState('');
   const [telError, setTelError] = useState(false);
   const [open, setOpen] = useState(true);
   const label = 'contact';
@@ -38,6 +39,8 @@ export default function ContactForm({ contact, setContact }) {
           disabled={inputDisabled}
           emailError={emailError}
           setEmailError={setEmailError}
+          emailErrorType={emailErrorType}
+          setEmailErrorType={setEmailErrorType}
         />
         <TelInput
           value={contact.tel}
@@ -48,8 +51,13 @@ export default function ContactForm({ contact, setContact }) {
           setTelError={setTelError}
         />
         <FormButtonGroup
+          formType={label}
           inputDisabled={inputDisabled}
           setInputDisabled={setInputDisabled}
+          setNameError={setNameError}
+          setEmailError={setEmailError}
+          setEmailErrorType={setEmailErrorType}
+          setTelError={setTelError}
         />
       </AccordionPanel>
     </form>

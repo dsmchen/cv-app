@@ -33,6 +33,7 @@ export default function TelInput({
         required
         className={telError ? 'invalid' : undefined}
         aria-describedby="tel-error"
+        id="tel"
       />
       {telError && (
         <span id="tel-error" role="alert" className="error">

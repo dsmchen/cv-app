@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 export default function EmailInput({
   value,
   contact,
@@ -7,9 +5,9 @@ export default function EmailInput({
   disabled,
   emailError,
   setEmailError,
+  emailErrorType,
+  setEmailErrorType,
 }) {
-  const [emailErrorType, setEmailErrorType] = useState('');
-
   function handleChange(e) {
     setContact({
       ...contact,
@@ -43,6 +41,7 @@ export default function EmailInput({
         required
         className={emailError ? 'invalid' : undefined}
         aria-describedby="email-error"
+        id="email"
       />
       {emailError && (
         <span id="email-error" role="alert" className="error">

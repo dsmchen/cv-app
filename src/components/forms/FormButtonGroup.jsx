@@ -8,6 +8,10 @@ export default function FormButtonGroup({
   setEducation,
   inputDisabled,
   setInputDisabled,
+  setNameError,
+  setEmailError,
+  setEmailErrorType,
+  setTelError,
 }) {
   return (
     <div className="button-group">
@@ -49,9 +53,14 @@ export default function FormButtonGroup({
         setInputDisabled={setInputDisabled}
       />
       <FormButton
+        formType={formType}
         label="Submit"
         inputDisabled={inputDisabled}
         setInputDisabled={setInputDisabled}
+        setNameError={setNameError}
+        setEmailError={setEmailError}
+        setEmailErrorType={setEmailErrorType}
+        setTelError={setTelError}
       />
     </div>
   );

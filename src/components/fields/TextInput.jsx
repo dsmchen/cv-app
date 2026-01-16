@@ -89,7 +89,10 @@ export default function TextInput({
         disabled={disabled}
         required={required}
         className={nameError ? 'invalid' : undefined}
-        aria-describedby="name-error"
+        aria-describedby={
+          label === 'Name (required)' ? 'name-error' : undefined
+        }
+        id="name"
       />
       {nameError && (
         <span id="name-error" role="alert" className="error">
