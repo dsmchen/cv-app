@@ -41,7 +41,7 @@ export default function EmailInput({
         onBlur={handleBlur}
         disabled={disabled}
         required
-        className={emailError && 'invalid'}
+        className={emailError ? 'invalid' : undefined}
         aria-describedby="email-error"
       />
       {emailError && (

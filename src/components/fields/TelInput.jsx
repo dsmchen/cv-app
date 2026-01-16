@@ -31,7 +31,7 @@ export default function TelInput({
         onBlur={handleBlur}
         disabled={disabled}
         required
-        className={telError && 'invalid'}
+        className={telError ? 'invalid' : undefined}
         aria-describedby="tel-error"
       />
       {telError && (

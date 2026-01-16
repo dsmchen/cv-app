@@ -88,7 +88,7 @@ export default function TextInput({
         onBlur={handleBlur}
         disabled={disabled}
         required={required}
-        className={nameError && 'invalid'}
+        className={nameError ? 'invalid' : undefined}
         aria-describedby="name-error"
       />
       {nameError && (
