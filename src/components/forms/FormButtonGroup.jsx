@@ -6,6 +6,7 @@ export default function FormButtonGroup({
   setExperience,
   education,
   setEducation,
+  inputDisabled,
   setInputDisabled,
 }) {
   return (
@@ -16,11 +17,13 @@ export default function FormButtonGroup({
             label="Add experience"
             experience={experience}
             setExperience={setExperience}
+            inputDisabled={inputDisabled}
           />
           <FormButton
             label="Remove experience"
             experience={experience}
             setExperience={setExperience}
+            inputDisabled={inputDisabled}
           />
         </>
       )}
@@ -30,16 +33,26 @@ export default function FormButtonGroup({
             label="Add education"
             education={education}
             setEducation={setEducation}
+            inputDisabled={inputDisabled}
           />
           <FormButton
             label="Remove education"
             education={education}
             setEducation={setEducation}
+            inputDisabled={inputDisabled}
           />
         </>
       )}
-      <FormButton label="Edit" setInputDisabled={setInputDisabled} />
-      <FormButton label="Submit" setInputDisabled={setInputDisabled} />
+      <FormButton
+        label="Edit"
+        inputDisabled={inputDisabled}
+        setInputDisabled={setInputDisabled}
+      />
+      <FormButton
+        label="Submit"
+        inputDisabled={inputDisabled}
+        setInputDisabled={setInputDisabled}
+      />
     </div>
   );
 }

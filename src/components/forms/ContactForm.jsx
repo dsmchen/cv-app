@@ -47,7 +47,10 @@ export default function ContactForm({ contact, setContact }) {
           telError={telError}
           setTelError={setTelError}
         />
-        <FormButtonGroup setInputDisabled={setInputDisabled} />
+        <FormButtonGroup
+          inputDisabled={inputDisabled}
+          setInputDisabled={setInputDisabled}
+        />
       </AccordionPanel>
     </form>
   );

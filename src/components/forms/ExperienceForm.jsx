@@ -83,6 +83,7 @@ export default function ExperienceForm({ experience, setExperience }) {
           formType={label}
           experience={experience}
           setExperience={setExperience}
+          inputDisabled={inputDisabled}
           setInputDisabled={setInputDisabled}
         />
       </AccordionPanel>

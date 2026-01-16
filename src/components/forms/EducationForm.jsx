@@ -74,6 +74,7 @@ export default function EducationForm({ education, setEducation }) {
           formType={label}
           education={education}
           setEducation={setEducation}
+          inputDisabled={inputDisabled}
           setInputDisabled={setInputDisabled}
         />
       </AccordionPanel>

@@ -36,6 +36,10 @@ form button {
   line-height: 1.2;
 }
 
+form button:disabled {
+  cursor: not-allowed;
+}
+
 /*
   ExperienceForm and EducationForm
 */

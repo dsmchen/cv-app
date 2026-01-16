@@ -4,6 +4,7 @@ export default function FormButton({
   setExperience,
   education,
   setEducation,
+  inputDisabled,
   setInputDisabled,
 }) {
   function handleClick(e) {
@@ -62,6 +63,7 @@ export default function FormButton({
     <button
       type={label === 'Submit' ? 'submit' : 'button'}
       onClick={handleClick}
+      disabled={label === 'Edit' ? !inputDisabled : inputDisabled}
     >
       <span>{label}</span>
     </button>
