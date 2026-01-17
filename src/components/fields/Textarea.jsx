@@ -30,6 +30,7 @@ export default function Textarea({
         value={value}
         onChange={handleChange}
         disabled={disabled}
+        placeholder="Please enter a comma separated list."
       ></textarea>
     </label>
   );
