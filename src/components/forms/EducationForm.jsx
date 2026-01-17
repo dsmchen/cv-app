@@ -15,14 +15,16 @@ export default function EducationForm({ education, setEducation }) {
   const label = 'education';
 
   for (let i = 0; i < count; i++) {
+    const key = crypto.randomUUID();
+
     educationList.push(
-      <div className="education-item" key={i}>
+      <div className="education-item" key={key}>
         <TextInput
           label="Institution name"
           value={education[i].institutionName ?? ''}
           education={education}
           setEducation={setEducation}
-          index={i}
+          itemKey={key}
           disabled={inputDisabled}
         />
         <TextInput
@@ -30,7 +32,7 @@ export default function EducationForm({ education, setEducation }) {
           value={education[i].titleOfStudy ?? ''}
           education={education}
           setEducation={setEducation}
-          index={i}
+          itemKey={key}
           disabled={inputDisabled}
         />
         <DateInput
@@ -38,7 +40,7 @@ export default function EducationForm({ education, setEducation }) {
           value={education[i].startDate ?? ''}
           education={education}
           setEducation={setEducation}
-          index={i}
+          itemKey={key}
           disabled={inputDisabled}
         />
         {!education[i].present && (
@@ -47,7 +49,7 @@ export default function EducationForm({ education, setEducation }) {
             value={education[i].endDate ?? ''}
             education={education}
             setEducation={setEducation}
-            index={i}
+            itemKey={key}
             disabled={inputDisabled}
           />
         )}
@@ -56,7 +58,7 @@ export default function EducationForm({ education, setEducation }) {
           checked={education[i].present ?? false}
           education={education}
           setEducation={setEducation}
-          index={i}
+          itemKey={key}
           disabled={inputDisabled}
         />
       </div>

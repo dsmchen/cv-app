@@ -52,7 +52,7 @@ export default function FormButton({
         setExperience([
           ...experience,
           {
-            id: experience.length,
+            id: crypto.randomUUID(),
             companyName: '',
             jobTitle: '',
             startDate: '',
@@ -73,7 +73,7 @@ export default function FormButton({
         setEducation([
           ...education,
           {
-            id: education.length,
+            id: crypto.randomUUID(),
             institutionName: '',
             titleOfStudy: '',
             startDate: '',

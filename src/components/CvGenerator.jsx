@@ -11,7 +11,7 @@ export default function CvGenerator() {
   });
   const [experience, setExperience] = useState([
     {
-      id: 0,
+      id: crypto.randomUUID(),
       jobTitle: '',
       companyName: '',
       startDate: '',
@@ -22,7 +22,7 @@ export default function CvGenerator() {
   ]);
   const [education, setEducation] = useState([
     {
-      id: 0,
+      id: crypto.randomUUID(),
       institutionName: '',
       titleOfStudy: '',
       startDate: '',

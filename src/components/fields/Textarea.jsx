@@ -3,7 +3,7 @@ export default function Textarea({
   value,
   experience,
   setExperience,
-  index,
+  itemKey,
   disabled,
 }) {
   function handleChange(e) {
@@ -11,7 +11,7 @@ export default function Textarea({
       case 'Main responsibilities':
         setExperience(
           experience.map((exp) => {
-            if (exp.id === index) {
+            if (exp.id === itemKey) {
               return { ...exp, mainResponsibilities: e.target.value };
             } else {
               return exp;

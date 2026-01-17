@@ -5,7 +5,7 @@ export default function DateInput({
   setExperience,
   education,
   setEducation,
-  index,
+  itemKey,
   disabled,
 }) {
   function handleChange(e) {
@@ -13,7 +13,7 @@ export default function DateInput({
       case 'Experience start date':
         setExperience(
           experience.map((exp) => {
-            if (exp.id === index) {
+            if (exp.id === itemKey) {
               return { ...exp, startDate: e.target.value };
             } else {
               return exp;
@@ -24,7 +24,7 @@ export default function DateInput({
       case 'Experience end date':
         setExperience(
           experience.map((exp) => {
-            if (exp.id === index) {
+            if (exp.id === itemKey) {
               return { ...exp, endDate: e.target.value };
             } else {
               return exp;
@@ -35,7 +35,7 @@ export default function DateInput({
       case 'Education start date':
         setEducation(
           education.map((edu) => {
-            if (edu.id === index) {
+            if (edu.id === itemKey) {
               return { ...edu, startDate: e.target.value };
             } else {
               return edu;
@@ -46,7 +46,7 @@ export default function DateInput({
       case 'Education end date':
         setEducation(
           education.map((edu) => {
-            if (edu.id === index) {
+            if (edu.id === itemKey) {
               return { ...edu, endDate: e.target.value };
             } else {
               return edu;

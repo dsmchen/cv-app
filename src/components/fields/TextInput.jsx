@@ -7,7 +7,7 @@ export default function TextInput({
   setExperience,
   education,
   setEducation,
-  index,
+  itemKey,
   disabled,
   required,
   nameError,
@@ -24,7 +24,7 @@ export default function TextInput({
       case 'Job title':
         setExperience(
           experience.map((exp) => {
-            if (exp.id === index) {
+            if (exp.id === itemKey) {
               return { ...exp, jobTitle: e.target.value };
             } else {
               return exp;
@@ -35,7 +35,7 @@ export default function TextInput({
       case 'Company name':
         setExperience(
           experience.map((exp) => {
-            if (exp.id === index) {
+            if (exp.id === itemKey) {
               return { ...exp, companyName: e.target.value };
             } else {
               return exp;
@@ -46,7 +46,7 @@ export default function TextInput({
       case 'Institution name':
         setEducation(
           education.map((edu) => {
-            if (edu.id === index) {
+            if (edu.id === itemKey) {
               return { ...edu, institutionName: e.target.value };
             } else {
               return edu;
@@ -57,7 +57,7 @@ export default function TextInput({
       case 'Title of study':
         setEducation(
           education.map((edu) => {
-            if (edu.id === index) {
+            if (edu.id === itemKey) {
               return { ...edu, titleOfStudy: e.target.value };
             } else {
               return edu;

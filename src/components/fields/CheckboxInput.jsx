@@ -5,7 +5,7 @@ export default function CheckboxInput({
   setExperience,
   education,
   setEducation,
-  index,
+  itemKey,
   disabled,
 }) {
   function handleChange(e) {
@@ -13,7 +13,7 @@ export default function CheckboxInput({
       case 'Present experience':
         setExperience(
           experience.map((exp) => {
-            if (exp.id === index) {
+            if (exp.id === itemKey) {
               return { ...exp, present: e.target.checked };
             } else {
               return exp;
@@ -24,7 +24,7 @@ export default function CheckboxInput({
       case 'Present education':
         setEducation(
           education.map((edu) => {
-            if (edu.id === index) {
+            if (edu.id === itemKey) {
               return { ...edu, present: e.target.checked };
             } else {
               return edu;
