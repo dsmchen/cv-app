@@ -1,6 +1,7 @@
 import '../../styles/Form.css';
 import AccordionButton from '../accordion/AccordionButton';
 import AccordionPanel from '../accordion/AccordionPanel';
+import FormButton from './FormButton';
 import TextInput from '../fields/TextInput';
 import DateInput from '../fields/DateInput';
 import CheckboxInput from '../fields/CheckboxInput';
@@ -20,6 +21,13 @@ export default function ExperienceForm({ experience, setExperience }) {
 
     experienceList.push(
       <div className="experience-item" key={key}>
+        <FormButton
+          label="Remove experience"
+          experience={experience}
+          setExperience={setExperience}
+          inputDisabled={inputDisabled}
+          itemKey={key}
+        />
         <TextInput
           label="Job title"
           value={experience[i].jobTitle ?? ''}

@@ -11,6 +11,7 @@ export default function FormButton({
   setEmailError,
   setEmailErrorType,
   setTelError,
+  itemKey,
 }) {
   function handleClick(e) {
     e.preventDefault();
@@ -65,7 +66,9 @@ export default function FormButton({
       case 'Remove experience':
         if (experience.length > 1) {
           setExperience(
-            experience.filter((e) => e.id !== experience.length - 1)
+            experience.filter(
+              (exp) => exp.id !== e.target.getAttribute('data-item-key'),
+            ),
           );
         }
         break;
@@ -84,7 +87,11 @@ export default function FormButton({
         break;
       case 'Remove education':
         if (education.length > 1) {
-          setEducation(education.filter((e) => e.id !== education.length - 1));
+          setEducation(
+            education.filter(
+              (edu) => edu.id !== e.target.getAttribute('data-item-key'),
+            ),
+          );
         }
         break;
     }
@@ -95,6 +102,7 @@ export default function FormButton({
       type={label === 'Submit' ? 'submit' : 'button'}
       onClick={handleClick}
       disabled={label === 'Edit' ? !inputDisabled : inputDisabled}
+      data-item-key={itemKey}
     >
       <span>{label}</span>
     </button>

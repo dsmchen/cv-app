@@ -16,36 +16,20 @@ export default function FormButtonGroup({
   return (
     <div className="button-group">
       {formType === 'experience' && (
-        <>
-          <FormButton
-            label="Add experience"
-            experience={experience}
-            setExperience={setExperience}
-            inputDisabled={inputDisabled}
-          />
-          <FormButton
-            label="Remove experience"
-            experience={experience}
-            setExperience={setExperience}
-            inputDisabled={inputDisabled}
-          />
-        </>
+        <FormButton
+          label="Add experience"
+          experience={experience}
+          setExperience={setExperience}
+          inputDisabled={inputDisabled}
+        />
       )}
       {formType === 'education' && (
-        <>
-          <FormButton
-            label="Add education"
-            education={education}
-            setEducation={setEducation}
-            inputDisabled={inputDisabled}
-          />
-          <FormButton
-            label="Remove education"
-            education={education}
-            setEducation={setEducation}
-            inputDisabled={inputDisabled}
-          />
-        </>
+        <FormButton
+          label="Add education"
+          education={education}
+          setEducation={setEducation}
+          inputDisabled={inputDisabled}
+        />
       )}
       <FormButton
         label="Edit"
