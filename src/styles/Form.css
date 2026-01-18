@@ -40,10 +40,17 @@ form button {
   padding: 0.25rem 0.5rem;
   font-weight: bold;
   line-height: 1.2;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
 }
 
 form button:disabled {
   cursor: not-allowed;
+}
+
+form button > * {
+  pointer-events: none;
 }
 
 /*
@@ -57,6 +64,11 @@ form button:disabled {
   gap: 0.5rem;
   border: 1px solid var(--gray-900);
   padding: 1rem;
+}
+
+.experience-item button,
+.education-item button {
+  align-self: end;
 }
 
 .experience-item label.present,

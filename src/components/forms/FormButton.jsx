@@ -1,3 +1,8 @@
+import Icon from '@mdi/react';
+import { mdiDelete } from '@mdi/js';
+import { mdiPlus } from '@mdi/js';
+import { mdiPencil } from '@mdi/js';
+
 export default function FormButton({
   formType,
   label,
@@ -13,6 +18,15 @@ export default function FormButton({
   setTelError,
   itemKey,
 }) {
+  let iconPath;
+  if (label === 'Delete experience' || label === 'Delete education') {
+    iconPath = mdiDelete;
+  } else if (label === 'Add experience' || label === 'Add education') {
+    iconPath = mdiPlus;
+  } else if (label === 'Edit') {
+    iconPath = mdiPencil;
+  }
+
   function handleClick(e) {
     e.preventDefault();
 
@@ -63,14 +77,12 @@ export default function FormButton({
           },
         ]);
         break;
-      case 'Remove experience':
-        if (experience.length > 1) {
-          setExperience(
-            experience.filter(
-              (exp) => exp.id !== e.target.getAttribute('data-item-key'),
-            ),
-          );
-        }
+      case 'Delete experience':
+        setExperience(
+          experience.filter(
+            (exp) => exp.id !== e.target.getAttribute('data-item-key'),
+          ),
+        );
         break;
       case 'Add education':
         setEducation([
@@ -85,14 +97,12 @@ export default function FormButton({
           },
         ]);
         break;
-      case 'Remove education':
-        if (education.length > 1) {
-          setEducation(
-            education.filter(
-              (edu) => edu.id !== e.target.getAttribute('data-item-key'),
-            ),
-          );
-        }
+      case 'Delete education':
+        setEducation(
+          education.filter(
+            (edu) => edu.id !== e.target.getAttribute('data-item-key'),
+          ),
+        );
         break;
     }
   }
@@ -104,6 +114,7 @@ export default function FormButton({
       disabled={label === 'Edit' ? !inputDisabled : inputDisabled}
       data-item-key={itemKey}
     >
+      {iconPath && <Icon path={iconPath} size={1} />}
       <span>{label}</span>
     </button>
   );

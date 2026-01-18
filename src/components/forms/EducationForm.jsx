@@ -21,9 +21,9 @@ export default function EducationForm({ education, setEducation }) {
     educationList.push(
       <div className="education-item" key={key}>
         <FormButton
-          label="Remove experience"
-          experience={education}
-          setExperience={setEducation}
+          label="Delete education"
+          education={education}
+          setEducation={setEducation}
           inputDisabled={inputDisabled}
           itemKey={key}
         />

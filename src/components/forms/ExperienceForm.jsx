@@ -22,7 +22,7 @@ export default function ExperienceForm({ experience, setExperience }) {
     experienceList.push(
       <div className="experience-item" key={key}>
         <FormButton
-          label="Remove experience"
+          label="Delete experience"
           experience={experience}
           setExperience={setExperience}
           inputDisabled={inputDisabled}

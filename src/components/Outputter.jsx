@@ -64,7 +64,7 @@ export default function Outputter({ contact, experience, education }) {
             {mainResponsibilitiesJsx}
           </ul>
         )}
-      </div>
+      </div>,
     );
   }
 
@@ -86,7 +86,7 @@ export default function Outputter({ contact, experience, education }) {
           {!edu.present && <span>{edu.endDate}</span>}
           {edu.present && <span>Present</span>}
         </li>
-      </ul>
+      </ul>,
     );
   }
 
@@ -112,15 +112,11 @@ export default function Outputter({ contact, experience, education }) {
           </ul>
         </header>
         <section className="experience">
-          {(experience[0].jobTitle || experience[0].companyName) && (
-            <h4>Experience</h4>
-          )}
+          {experience[0] && <h4>Experience</h4>}
           {experienceJsx}
         </section>
         <section className="education">
-          {(education[0].institutionName || education[0].titleOfStudy) && (
-            <h4>Education</h4>
-          )}
+          {education[0] && <h4>Education</h4>}
           {educationJsx}
         </section>
       </div>
