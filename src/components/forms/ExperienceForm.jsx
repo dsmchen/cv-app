@@ -15,13 +15,7 @@ export default function ExperienceForm({ experience, setExperience }) {
   const [open, setOpen] = useState(false);
   const label = 'experience';
 
-  // TODO: TO BE REMOVED
-  console.log('experience', experience);
-
   for (let i = 0; i < count; i++) {
-    // TODO: TO BE REMOVED
-    console.log('experience[i]', experience[i]);
-
     const key = crypto.randomUUID();
 
     experienceList.push(
@@ -56,7 +50,7 @@ export default function ExperienceForm({ experience, setExperience }) {
             value={experience[i].endDate ?? ''}
             experience={experience}
             setExperience={setExperience}
-            itemKey={(i = key)}
+            itemKey={key}
             disabled={inputDisabled}
           />
         )}
@@ -76,7 +70,7 @@ export default function ExperienceForm({ experience, setExperience }) {
           itemKey={key}
           disabled={inputDisabled}
         />
-      </div>
+      </div>,
     );
   }
 
