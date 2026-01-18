@@ -15,7 +15,7 @@ export default function EducationForm({ education, setEducation }) {
   const label = 'education';
 
   for (let i = 0; i < count; i++) {
-    const key = crypto.randomUUID();
+    const key = education[i].id;
 
     educationList.push(
       <div className="education-item" key={key}>
@@ -61,7 +61,7 @@ export default function EducationForm({ education, setEducation }) {
           itemKey={key}
           disabled={inputDisabled}
         />
-      </div>
+      </div>,
     );
   }
 

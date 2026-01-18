@@ -16,7 +16,7 @@ export default function ExperienceForm({ experience, setExperience }) {
   const label = 'experience';
 
   for (let i = 0; i < count; i++) {
-    const key = crypto.randomUUID();
+    const key = experience[i].id;
 
     experienceList.push(
       <div className="experience-item" key={key}>
